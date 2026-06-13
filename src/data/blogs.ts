@@ -43,7 +43,7 @@ We use negative pressure vacuum chambers to pull out tiny micro-bubbles before p
     category: 'Resin Art Inspiration',
     readTime: '6 min read',
     date: 'May 28, 2026',
-    image: '/assets/150604.jpg',
+    image: '/assets/150608.jpg',
     tags: ['wedding decor', 'keepsake', 'resin art', 'flower preservation'],
     author: 'Resident Resin Artist'
   },
@@ -67,7 +67,7 @@ Take high-resolution screenshots from your chat files, memories of late-night fo
     category: 'Gift Ideas',
     readTime: '5 min read',
     date: 'May 14, 2026',
-    image: '/assets/150605.jpg',
+    image: '/assets/150611.jpg',
     tags: ['gifting', 'custom portraits', 'anniversary guides', 'frames'],
     author: 'Brand Strategist'
   },
@@ -111,7 +111,7 @@ Frosted name boards with gold standoffs remain our top seller for office entranc
     category: 'Gift Ideas',
     readTime: '4 min read',
     date: 'April 12, 2026',
-    image: '/assets/150607.jpg',
+    image: '/assets/150612.jpg',
     tags: ['corporate gifts', 'plaques', 'office decor', 'branding'],
     author: 'Brand Strategist'
   },

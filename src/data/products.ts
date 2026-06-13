@@ -10,7 +10,7 @@ const BASE_PRODUCTS: Product[] = [
     salePrice: 28500,
     category: 'Resin Art',
     images: [
-      '/assets/150577.jpg',
+      '/assets/150578.jpg',
       '/assets/150578.jpg',
       '/assets/150579.jpg'
     ],
@@ -141,7 +141,7 @@ const BASE_PRODUCTS: Product[] = [
     category: 'Home Decor',
     images: [
       '/assets/150594.jpg',
-      '/assets/150595.jpg'
+      '/assets/150599.jpg'
     ],
     featured: false,
     stock: 18,
@@ -161,9 +161,9 @@ const BASE_PRODUCTS: Product[] = [
     salePrice: 26000,
     category: 'Personalized Gifts',
     images: [
-      '/assets/150596.jpg',
+      '/assets/150601.jpg',
       '/assets/150597.jpg',
-      '/assets/150598.jpg'
+      '/assets/150610.jpg'
     ],
     featured: true,
     stock: 35,
@@ -220,7 +220,7 @@ const BASE_PRODUCTS: Product[] = [
 
 // Full image library — all assets in /public/assets
 const RESIN_IMAGES = [
-  '/assets/150577.jpg',
+  '/assets/150578.jpg',
   '/assets/150578.jpg',
   '/assets/150579.jpg',
   '/assets/150580.jpg',
@@ -237,19 +237,19 @@ const RESIN_IMAGES = [
   '/assets/150592.jpg',
   '/assets/150593.jpg',
   '/assets/150594.jpg',
-  '/assets/150595.jpg',
-  '/assets/150596.jpg',
+  '/assets/150599.jpg',
+  '/assets/150601.jpg',
   '/assets/150597.jpg',
-  '/assets/150598.jpg',
+  '/assets/150610.jpg',
   '/assets/150599.jpg',
   '/assets/150600.jpg',
   '/assets/150601.jpg',
   '/assets/150602.jpg',
   '/assets/150603.jpg',
-  '/assets/150604.jpg',
-  '/assets/150605.jpg',
+  '/assets/150608.jpg',
+  '/assets/150611.jpg',
   '/assets/150606.jpg',
-  '/assets/150607.jpg',
+  '/assets/150612.jpg',
   '/assets/150608.jpg',
   '/assets/150609.jpg',
   '/assets/150610.jpg',
@@ -294,7 +294,7 @@ const RESIN_IMAGES = [
   '/assets/150650.jpg',
   '/assets/150651.jpg',
   // Cycle back through early assets to cover the full 95-item generated range
-  '/assets/150577.jpg',
+  '/assets/150578.jpg',
   '/assets/150579.jpg',
   '/assets/150581.jpg',
   '/assets/150584.jpg',
