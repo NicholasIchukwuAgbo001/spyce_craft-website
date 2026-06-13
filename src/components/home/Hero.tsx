@@ -8,7 +8,6 @@ export default function Hero() {
  return (
  <section id="hero-section" className="relative bg-linear-to-b from-brand-secondary via-brand-muted to-brand-secondary py-16 lg:py-24 overflow-hidden border-b border-white/5">
 
- {/* Hero Background Image Overlay */}
  <div className="absolute inset-0 z-0">
  <img
  src="/assets/hero_background_1781342822203.jpg"

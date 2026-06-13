@@ -85,17 +85,13 @@ export default function ShopPage() {
  result = result.filter((p) => p.rating >= minRating);
  }
 
- // 8. Security stock availability
  if (inStockOnly) {
  result = result.filter((p) => p.stock > 0);
  }
-
- // 9. Fully Customizable products only
  if (customizableOnly) {
  result = result.filter((p) => p.customizable);
  }
 
- // 10. Sorting logic
  if (sortOption === 'price-low') {
  result.sort((a, b) => (a.salePrice ?? a.price) - (b.salePrice ?? b.price));
  } else if (sortOption === 'price-high') {
@@ -103,7 +99,7 @@ export default function ShopPage() {
  } else if (sortOption === 'rating') {
  result.sort((a, b) => b.rating - a.rating);
  } else if (sortOption === 'newest') {
- // Products with tag 'new' or listed later
+
  result.sort((a, b) => {
  const aNew = a.tags.includes('new') ? 1 : 0;
  const bNew = b.tags.includes('new') ? 1 : 0;
@@ -140,7 +136,7 @@ export default function ShopPage() {
  };
 
  const formatNaira = (val: number) => {
- return '₦' + val.toLocaleString('en-NG');
+ return 'â‚¦' + val.toLocaleString('en-NG');
  };
 
  // Determine dynamic visual badges based on tags
@@ -149,7 +145,7 @@ export default function ShopPage() {
  return { text: 'Limited Edition', style: 'bg-indigo-600 text-white' };
  }
  if (p.salePrice) {
- return { text: 'Promo Offer', style: 'bg-red-500 text-white animate-pulse' };
+ return { text: 'Promo Offer', style: 'bg-red-500 text-white' };
  }
  if (p.tags.includes('new')) {
  return { text: 'New Design', style: 'bg-emerald-600 text-white' };
@@ -186,7 +182,7 @@ export default function ShopPage() {
  const handleWhatsAppBuyNow = (p: Product, e: React.MouseEvent) => {
  e.stopPropagation();
  const currentPrice = p.salePrice ?? p.price;
- const body = `Hello Spyce Crafts ✨,\n\nI want to buy immediately:\n• *${p.name}*\n Price: ${formatNaira(currentPrice)}\n Category: ${p.category}\n\nPlease help confirm customization options so we can proceed with transport dispatch across Nigeria!`;
+ const body = `Hello Spyce Crafts âœ¨,\n\nI want to buy immediately:\nâ€¢ *${p.name}*\n Price: ${formatNaira(currentPrice)}\n Category: ${p.category}\n\nPlease help confirm customization options so we can proceed with transport dispatch across Nigeria!`;
  const url = `https://wa.me/2349069996290?text=${encodeURIComponent(body)}`;
  window.open(url, '_blank');
  };
@@ -194,7 +190,7 @@ export default function ShopPage() {
  return (
  <main id="shop-catalog-page" className="py-12 bg-white min-h-screen">
 
- {/* ── Cart Added Flash Toast ── */}
+ {/* â”€â”€ Cart Added Flash Toast â”€â”€ */}
  <div
  className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${cartToastProduct ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
  }`}
@@ -205,7 +201,7 @@ export default function ShopPage() {
  <img src={cartToastProduct.images[0]} alt={cartToastProduct.name} className="w-full h-full object-cover" />
  </div>
  <div className="flex-1 min-w-0">
- <p className="text-[11px] font-bold text-brand-primary uppercase tracking-wider">Added to Cart ✓</p>
+ <p className="text-[11px] font-bold text-brand-primary uppercase tracking-wider">Added to Cart âœ“</p>
  <p className="text-xs text-stone-300 truncate font-sans">{cartToastProduct.name}</p>
  </div>
  <button
@@ -312,8 +308,8 @@ export default function ShopPage() {
  className="w-full accent-brand-primary cursor-pointer"
  />
  <div className="flex justify-between text-[10px] text-stone-400 font-mono">
- <span>₦10,000</span>
- <span>₦100,000</span>
+ <span>â‚¦10,000</span>
+ <span>â‚¦100,000</span>
  </div>
  </div>
 
@@ -376,7 +372,7 @@ export default function ShopPage() {
  : 'bg-white text-stone-500 border-stone-200 hover:border-brand-primary'
  }`}
  >
- {score === 0 ? 'All' : `${score}⭐`}
+ {score === 0 ? 'All' : `${score}â­`}
  </button>
  ))}
  </div>
@@ -470,14 +466,14 @@ export default function ShopPage() {
  onClick={() => navigateTo('product-detail', product.slug)}
  onMouseEnter={() => setHoveredCardId(product.id)}
  onMouseLeave={() => setHoveredCardId(null)}
- className="group bg-white rounded-2xl border border-stone-100 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+ className="group bg-white rounded-2xl border border-stone-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer flex flex-col justify-between"
  >
  {/* Visual area */}
  <div className="relative aspect-square overflow-hidden bg-stone-50">
  <img
  src={isHovered && product.images[1] ? product.images[1] : product.images[0]}
  alt={product.name}
- className="w-full h-full object-cover transition-all duration-500"
+ className="w-full h-full object-cover"
  referrerPolicy="no-referrer"
  />
 
@@ -492,18 +488,18 @@ export default function ShopPage() {
  <button
  id={`card-wishlist-${product.id}`}
  onClick={(e) => handleWhiskeyToggle(product, e)}
- className="absolute top-2.5 right-2.5 w-7.5 h-7.5 rounded-full bg-white/90 shadow flex items-center justify-center text-stone-500 hover:text-red-500 z-10 transition-colors"
+ className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/90 shadow flex items-center justify-center text-stone-500 hover:text-red-500 z-10"
  title="Save to Wishlist"
  >
  <Heart className={`w-4 h-4 ${isSaved ? 'text-red-500 fill-red-500' : ''}`} />
  </button>
 
- {/* Hover Quick view layout overlays on desktop */}
- <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
+ {/* Hover Quick view - hidden on mobile, visible on desktop hover */}
+ <div className="absolute inset-0 bg-black/10 hidden group-hover:flex items-end justify-center pb-3">
  <button
  id={`quick-add-btn-${product.id}`}
  onClick={(e) => handleQuickViewOpen(product, e)}
- className="bg-white/95 text-brand-dark px-3 py-1.5 rounded-lg text-[10px] font-semibold tracking-wider uppercase shadow-md hover:bg-brand-primary hover:text-white transition-colors"
+ className="bg-white text-brand-dark px-3 py-1.5 rounded-lg text-[10px] font-semibold tracking-wider uppercase shadow-md hover:bg-brand-primary hover:text-white"
  >
  Quick Select
  </button>
@@ -550,7 +546,7 @@ export default function ShopPage() {
 
  {/* Stock warning */}
  {product.stock <= 4 && product.stock > 0 && (
- <span className="text-[9px] text-red-500 font-bold uppercase animate-pulse">Low Stock</span>
+ <span className="text-[9px] text-red-500 font-bold uppercase">Low Stock</span>
  )}
  </div>
 
@@ -633,7 +629,7 @@ export default function ShopPage() {
  {quickViewProduct && (
  <div
  id="product-quickview-modal"
- className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 animate-fadeIn"
+ className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
  onClick={() => setQuickViewProduct(null)}
  >
  <div
@@ -643,7 +639,7 @@ export default function ShopPage() {
  <button
  id="quickview-close-btn"
  onClick={() => setQuickViewProduct(null)}
- className="absolute top-4 right-4 text-stone-400 hover:text-brand-dark hover:rotate-90 transition-transform"
+ className="absolute top-4 right-4 text-stone-400 hover:text-brand-dark "
  >
  <X className="w-5 h-5" />
  </button>
