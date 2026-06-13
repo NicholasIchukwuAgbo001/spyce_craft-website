@@ -273,10 +273,10 @@ export default function App() {
 
                                 <div className="text-center space-y-3 mb-12">
                                     <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Viral Feed Presence</span>
-                                    <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
+                                    <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
                                         As Seen on TikTok &amp; Instagram
                                     </h2>
-                                    <p className="text-stone-300 font-sans max-w-xl mx-auto text-xs sm:text-sm">
+                                    <p className="text-stone-500 font-sans max-w-xl mx-auto text-xs sm:text-sm">
                                         Our workspace processes, packaging stack lines, and frame design files regular clear massive organic followings.
                                     </p>
                                 </div>
@@ -338,7 +338,7 @@ export default function App() {
 
                                 <div className="text-center space-y-3 mb-16">
                                     <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Help Hub</span>
-                                    <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
+                                    <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
                                         Design Questions? We Answered.
                                     </h2>
                                 </div>

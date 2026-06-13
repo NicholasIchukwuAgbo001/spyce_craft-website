@@ -850,7 +850,6 @@ export default function Navbar() {
                     { label: 'Shop', view: 'shop' as const, icon: <span className="text-lg">🛍</span> },
                     { label: 'Gallery', view: 'gallery' as const, icon: <span className="text-lg">🖼</span> },
                     { label: 'Wishlist', view: 'wishlist' as const, icon: <span className="text-lg">♡</span>, badge: wishlistCount },
-                    { label: 'Cart', view: 'cart' as const, icon: <span className="text-lg">🛒</span>, badge: cartCount }
                 ].map((item) => (
                     <button
                         key={item.label}

@@ -326,7 +326,6 @@ export default function ShopPage() {
                             </select>
                         </div>
 
-                        {/* Material Filter */}
                         <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
                             <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Atelier Core Material</label>
                             <select
