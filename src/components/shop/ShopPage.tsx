@@ -126,7 +126,6 @@ export default function ShopPage() {
  customizableOnly
  ]);
 
- // Paginated display
  const paginatedProducts = useMemo(() => {
  return filteredProducts.slice(0, visibleCount);
  }, [filteredProducts, visibleCount]);
