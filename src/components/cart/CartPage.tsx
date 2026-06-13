@@ -49,7 +49,6 @@ export default function CartPage() {
     const delivery = getDeliveryFee();
     const total = getCartTotal() - discountAmount;
 
-    // Calculate free shipping progress bar up to NGN 100,000 Naira
     const freeShippingThreshold = 100000;
     const shippingPercent = Math.min((subtotal / freeShippingThreshold) * 100, 100);
     const toFreeShipping = Math.max(freeShippingThreshold - subtotal, 0);
@@ -58,7 +57,6 @@ export default function CartPage() {
         <main id="cart-page-layout-container" className="py-16 bg-white min-h-screen">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* Back navigation */}
                 <div className="flex items-center justify-between mb-8">
                     <button
                         id="cart-page-back-btn"

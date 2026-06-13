@@ -298,7 +298,7 @@ const RESIN_IMAGES = [
   '/assets/150579.jpg',
   '/assets/150581.jpg',
   '/assets/150584.jpg',
-  '/assets/150584.jpg',
+  '/assets/150585.jpg',
   '/assets/150586.jpg',
   '/assets/150588.jpg',
   '/assets/150590.jpg',

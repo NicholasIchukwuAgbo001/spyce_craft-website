@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { PRODUCTS } from '../../data/products';
 import { Search, SlidersHorizontal, Heart, ShieldCheck, Sparkles, Star, CheckCircle, Eye, ShoppingBag, X, HelpCircle } from 'lucide-react';
@@ -181,7 +181,7 @@ export default function ShopPage() {
     const handleWhatsAppBuyNow = (p: Product, e: React.MouseEvent) => {
         e.stopPropagation();
         const currentPrice = p.salePrice ?? p.price;
-        const body = `Hello Spyce Crafts âœ¨,\n\nI want to buy immediately:\nâ€¢ *${p.name}*\n Price: ${formatNaira(currentPrice)}\n Category: ${p.category}\n\nPlease help confirm customization options so we can proceed with transport dispatch across Nigeria!`;
+        const body = `Hello Spyce Crafts ✨,\n\nI want to buy immediately:\n• *${p.name}*\n Price: ${formatNaira(currentPrice)}\n Category: ${p.category}\n\nPlease help confirm customization options so we can proceed with transport dispatch across Nigeria!`;
         const url = `https://wa.me/2349069996290?text=${encodeURIComponent(body)}`;
         window.open(url, '_blank');
     };
@@ -189,9 +189,9 @@ export default function ShopPage() {
     return (
         <main id="shop-catalog-page" className="py-12 bg-white min-h-screen">
 
-            {/* â”€â”€ Cart Added Flash Toast â”€â”€ */}
+            {/* ── Cart Added Flash Toast ── */}
             <div
-                className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${cartToastProduct ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
+                className={`fixed bottom-6 left-0 right-0 mx-auto w-fit z-50 transition-opacity duration-300 ${cartToastProduct ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
                     }`}
             >
                 {cartToastProduct && (
@@ -200,7 +200,7 @@ export default function ShopPage() {
                             <img src={cartToastProduct.images[0]} alt={cartToastProduct.name} className="w-full h-full object-cover" />
                         </div>
                         <div className="flex-1 min-w-0">
-                            <p className="text-[11px] font-bold text-brand-primary uppercase tracking-wider">Added to Cart âœ“</p>
+                            <p className="text-[11px] font-bold text-brand-primary uppercase tracking-wider">Added to Cart ✓</p>
                             <p className="text-xs text-stone-300 truncate font-sans">{cartToastProduct.name}</p>
                         </div>
                         <button
@@ -367,7 +367,7 @@ export default function ShopPage() {
                                             : 'bg-white text-stone-500 border-stone-200 hover:border-brand-primary'
                                             }`}
                                     >
-                                        {score === 0 ? 'All' : `${score}â­`}
+                                        {score === 0 ? 'All' : `${score}⭐`}
                                     </button>
                                 ))}
                             </div>
@@ -462,9 +462,9 @@ export default function ShopPage() {
                                             onMouseLeave={() => setHoveredCardId(null)}
                                             className="group bg-white rounded-2xl border border-stone-100 overflow-hidden shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-between"
                                         >
-                                            {/* Visual area — overflow-hidden prevents image bleed into adjacent GPU layers */}
+                                            {/* Visual area � overflow-hidden prevents image bleed into adjacent GPU layers */}
                                             <div className="relative aspect-square bg-stone-50 overflow-hidden">
-                                                {/* Primary image always rendered, secondary pre-loaded beneath via opacity swap — avoids src change GPU tear */}
+                                                {/* Primary image always rendered, secondary pre-loaded beneath via opacity swap � avoids src change GPU tear */}
                                                 <img
                                                     src={product.images[0]}
                                                     alt={product.name}
@@ -578,7 +578,7 @@ export default function ShopPage() {
                                                                 setCartToastProduct(product);
                                                                 setTimeout(() => setCartToastProduct(null), 3500);
                                                             }}
-                                                            className="px-2 py-1.5 rounded-lg bg-brand-primary hover:bg-brand-dark text-white text-[10px] font-bold transition-all duration-200 flex-1 flex items-center justify-center gap-1 active:scale-95"
+                                                            className="px-2 py-1.5 rounded-lg bg-brand-primary hover:bg-brand-dark text-white text-[10px] font-bold flex-1 flex items-center justify-center gap-1"
                                                         >
                                                             <ShoppingBag className="w-3 h-3" />
                                                             <span>Add to Cart</span>
