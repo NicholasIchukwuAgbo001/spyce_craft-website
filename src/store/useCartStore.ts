@@ -40,7 +40,6 @@ interface CartState {
   getDeliveryFee: () => number;
   getCartTotal: () => number;
   
-  // Wishlist Actions
   toggleWishlist: (product: Product) => void;
   isInWishlist: (productId: string) => boolean;
   moveToCart: (productId: string, size?: string, color?: string) => void;
