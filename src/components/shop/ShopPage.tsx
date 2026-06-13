@@ -462,14 +462,28 @@ export default function ShopPage() {
                                             onMouseLeave={() => setHoveredCardId(null)}
                                             className="group bg-white rounded-2xl border border-stone-100 overflow-hidden shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-between"
                                         >
-                                            {/* Visual area */}
-                                            <div className="relative aspect-square bg-stone-50">
+                                            {/* Visual area — overflow-hidden prevents image bleed into adjacent GPU layers */}
+                                            <div className="relative aspect-square bg-stone-50 overflow-hidden">
+                                                {/* Primary image always rendered, secondary pre-loaded beneath via opacity swap — avoids src change GPU tear */}
                                                 <img
-                                                    src={isHovered && product.images[1] ? product.images[1] : product.images[0]}
+                                                    src={product.images[0]}
                                                     alt={product.name}
-                                                    className="w-full h-full object-cover"
+                                                    className={`absolute inset-0 w-full h-full object-cover ${isHovered && product.images[1] ? 'opacity-0' : 'opacity-100'}`}
                                                     referrerPolicy="no-referrer"
+                                                    loading="lazy"
+                                                    decoding="async"
                                                 />
+                                                {product.images[1] && (
+                                                    <img
+                                                        src={product.images[1]}
+                                                        alt=""
+                                                        aria-hidden="true"
+                                                        className={`absolute inset-0 w-full h-full object-cover ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+                                                        referrerPolicy="no-referrer"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                    />
+                                                )}
 
                                                 {/* Custom label badges */}
                                                 {badge && (

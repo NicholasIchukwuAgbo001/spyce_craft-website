@@ -75,4 +75,15 @@ textarea::placeholder {
   .animate-ping, .animate-fadeIn, .animate-slideIn {
     animation: none !important;
   }
+  /* Prevent GPU layer promotion on scrollable product grids */
+  #catalog-products-grid,
+  #gallery-masonry-grid {
+    contain: layout style;
+  }
+  /* Ensure image containers never bleed outside their bounds */
+  .aspect-square,
+  .aspect-video,
+  [class*="aspect-"] {
+    overflow: hidden !important;
+  }
 }
