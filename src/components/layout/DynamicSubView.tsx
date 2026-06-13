@@ -1190,14 +1190,14 @@ GRID TEMPLATE 3: CUSTOM BRIEFS & COMMISSION REQUESTS
                         </div>
                         <button
                             type="submit"
-                            className="w-full py-4 rounded-xl bg-brand-primary hover:bg-[#b0936b] text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-xl flex items-center justify-center gap-1.5 cursor-pointer"
+                            className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-xl shadow-emerald-900/30 flex items-center justify-center gap-2 cursor-pointer"
                         >
                             <MessageSquare className="w-4 h-4" />
-                            <span>Compile Brief &amp; Dispatch to WhatsApp</span>
+                            <span>Send Brief via WhatsApp</span>
                         </button>
                         {formSuccess && (
                             <p className="text-center text-xs text-emerald-400 font-bold animate-pulse">
-                                Dynamic brief compiles successfully! Redirecting and opening WhatsApp...
+                                WhatsApp is opening — tap Send to submit your brief.
                             </p>
                         )}
                     </form>
@@ -1430,13 +1430,14 @@ GRID TEMPLATE 6: REAL SPECIAL CHANNELS & PHONE ROSTERS
                             />
                             <button
                                 type="submit"
-                                className="w-full py-3.5 rounded-xl bg-brand-primary hover:bg-[#b0936b] text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md"
+                                className="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md flex items-center justify-center gap-2"
                             >
-                                Send Email Message
+                                <MessageSquare className="w-4 h-4" />
+                                Send via WhatsApp
                             </button>
                             {formSuccess && (
-                                <p className="text-center text-xs text-emerald-400 font-bold animate-pulse">
-                                    Email request compiled successfully! We will follow back over email under 12 hours.
+                                <p className="text-center text-[10px] text-emerald-400 font-sans animate-pulse">
+                                    WhatsApp is opening â€” tap <strong>Send</strong> in the chat to submit your message.
                                 </p>
                             )}
                         </form>

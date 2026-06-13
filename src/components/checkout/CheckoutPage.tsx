@@ -249,11 +249,14 @@ export default function CheckoutPage() {
                 <button
                   id="checkout-submit-btn"
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-brand-dark hover:bg-brand-primary text-white text-xs font-bold uppercase tracking-wider transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg cursor-pointer transform active:scale-95"
+                  className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 cursor-pointer active:scale-95"
                 >
-                  <Send className="w-4.5 h-4.5" />
-                  <span>Send Order blueprint &amp; Open WhatsApp</span>
+                  <MessageSquare className="w-4.5 h-4.5" />
+                  <span>Confirm Order &amp; Open WhatsApp</span>
                 </button>
+                <p className="text-center text-[10px] text-stone-400 font-sans mt-2">
+                  This will open <strong className="text-emerald-400">WhatsApp</strong> with your order pre-filled — just tap <strong>Send</strong>.
+                </p>
               </div>
 
             </form>
