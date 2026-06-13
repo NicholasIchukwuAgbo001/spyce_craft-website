@@ -877,7 +877,7 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
                         </div>
                     </div>
 
-                    {/* Product grid � capped at 6 cards max to prevent GPU overload on mobile */}
+                    {/* Product grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         {(() => {
                             const matched = PRODUCTS.filter((prod) => {
@@ -889,18 +889,25 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
                                 const isNewArrival = normalizedTopic === 'New Arrivals' && !prod.tags.includes('best seller');
                                 return matchesTag || matchesCategory || isSaleView || isBestSeller || isTrending || isNewArrival;
                             });
-                            // Fallback to first 6 if nothing matched
                             const toShow = (matched.length > 0 ? matched : PRODUCTS).slice(0, 6);
                             return toShow.map((prod) => {
                                 const isItemWishlisted = isInWishlist(prod.id);
+                                // Truncate description in JS — avoids line-clamp GPU paint bleed on mobile WebKit
+                                const shortDesc = prod.description.length > 72
+                                    ? prod.description.slice(0, 72).trimEnd() + '…'
+                                    : prod.description;
+                                const shortName = prod.name.length > 30
+                                    ? prod.name.slice(0, 30).trimEnd() + '…'
+                                    : prod.name;
+
                                 return (
                                     <div
                                         id={`subview-item-${prod.id}`}
                                         key={prod.id}
-                                        className="rounded-xl overflow-hidden bg-[#111114] border border-white/8 flex flex-col"
+                                        className="rounded-xl overflow-hidden bg-white border border-stone-200 flex flex-col"
                                     >
-                                        {/* Image — no transform, no overlay, no filter */}
-                                        <div className="relative aspect-square overflow-hidden bg-stone-900">
+                                        {/* Image */}
+                                        <div className="relative w-full aspect-square overflow-hidden bg-stone-100">
                                             <img
                                                 src={prod.images[0]}
                                                 alt={prod.name}
@@ -918,43 +925,59 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
                                             ) : null}
                                             <button
                                                 onClick={() => toggleWishlist(prod)}
-                                                className="absolute top-3 right-3 p-2 bg-black/60 rounded-full text-white cursor-pointer"
+                                                className="absolute top-3 right-3 p-2 bg-white/80 rounded-full text-stone-500 cursor-pointer"
                                             >
                                                 <Heart className={`w-4 h-4 ${isItemWishlisted ? 'text-red-500 fill-red-500' : ''}`} />
                                             </button>
                                         </div>
 
-                                        {/* Details � no group-hover, no transitions except color */}
-                                        <div className="p-4 flex flex-col gap-3 flex-1">
-                                            <div>
-                                                <span className="text-[10px] text-brand-primary uppercase font-bold">{prod.category}</span>
-                                                <h3 className="font-serif text-sm font-bold text-white mt-0.5 line-clamp-1">{prod.name}</h3>
-                                                <p className="text-stone-400 text-xs font-light line-clamp-2 mt-0.5">{prod.description}</p>
+                                        {/* Info — fixed-height text area, overflow-hidden hard-stops any paint bleed */}
+                                        <div className="p-4 flex flex-col gap-3 overflow-hidden">
+                                            <div className="overflow-hidden">
+                                                <span className="text-[10px] text-brand-primary uppercase font-bold font-sans block">
+                                                    {prod.category}
+                                                </span>
+                                                <h3 className="font-serif text-sm font-bold text-stone-900 mt-0.5">
+                                                    {shortName}
+                                                </h3>
+                                                <p className="text-stone-500 text-xs font-sans mt-1 leading-relaxed">
+                                                    {shortDesc}
+                                                </p>
                                             </div>
-                                            <div className="flex justify-between items-center border-t border-white/5 pt-2">
+
+                                            <div className="border-t border-stone-100 pt-2 flex items-center justify-between">
                                                 {prod.salePrice ? (
                                                     <div className="flex items-baseline gap-1.5">
-                                                        <span className="text-white font-bold text-sm">NGN {prod.salePrice.toLocaleString()}</span>
-                                                        <span className="text-stone-500 text-xs line-through">NGN {prod.price.toLocaleString()}</span>
+                                                        <span className="text-stone-900 font-bold text-sm tabular-nums">
+                                                            NGN {prod.salePrice.toLocaleString()}
+                                                        </span>
+                                                        <span className="text-stone-400 text-xs line-through tabular-nums">
+                                                            NGN {prod.price.toLocaleString()}
+                                                        </span>
                                                     </div>
                                                 ) : (
-                                                    <span className="text-white font-bold text-sm">NGN {prod.price.toLocaleString()}</span>
+                                                    <span className="text-stone-900 font-bold text-sm tabular-nums">
+                                                        NGN {prod.price.toLocaleString()}
+                                                    </span>
                                                 )}
-                                                <span className="text-[10px] text-stone-500 uppercase">{prod.stock > 0 ? `${prod.stock} left` : 'Sold Out'}</span>
+                                                <span className="text-[10px] text-stone-400 uppercase font-sans">
+                                                    {prod.stock > 0 ? `${prod.stock} left` : 'Sold Out'}
+                                                </span>
                                             </div>
-                                            <div className="grid grid-cols-2 gap-2">
+
+                                            <div className="flex flex-col gap-2">
                                                 <button
                                                     onClick={() => navigateTo('product-detail', prod.slug)}
-                                                    className="py-2 rounded-lg border border-white/10 text-stone-300 text-xs font-bold uppercase cursor-pointer text-center"
+                                                    className="w-full py-2 rounded-lg border border-stone-200 text-stone-700 text-xs font-bold uppercase cursor-pointer text-center"
                                                 >
                                                     Details
                                                 </button>
                                                 <button
                                                     onClick={() => triggerAddToCart(prod)}
-                                                    className="py-2 rounded-lg bg-brand-primary text-stone-950 text-xs font-bold uppercase cursor-pointer flex items-center justify-center gap-1"
+                                                    className="w-full py-2 rounded-lg bg-stone-900 text-white text-xs font-bold uppercase cursor-pointer flex items-center justify-center gap-1"
                                                 >
                                                     <ShoppingCart className="w-3.5 h-3.5" />
-                                                    <span>Add</span>
+                                                    <span>Add to Cart</span>
                                                 </button>
                                             </div>
                                         </div>
