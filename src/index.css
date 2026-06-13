@@ -34,14 +34,14 @@ html {
   color: #ECE9E4 !important;
 }
 
-/* Overriding section backgrounds to be gorgeous obsidian/charcoal surfaces with subtle golden radial gradients */
-section, 
-.bg-stone-50, 
+/* Overriding section backgrounds to dark obsidian surfaces.
+   Removed radial-gradient background-image — it creates extra GPU composite layers on every section
+   and causes horizontal tearing on Android Chrome. */
+section,
+.bg-stone-50,
 .bg-brand-muted,
 .bg-stone-100 {
   background-color: #0A0A0C !important;
-  background-image: radial-gradient(circle at 10% 20%, rgba(197, 168, 128, 0.04) 0%, transparent 40%), 
-                    radial-gradient(circle at 90% 80%, rgba(226, 195, 126, 0.03) 0%, transparent 40%) !important;
 }
 
 /* Dynamic active gradients for eye-catching premium luxury details */
@@ -50,11 +50,11 @@ section,
 }
 
 /* Transform ALL white cards/panels into luxurious dark glassmorphic cards */
+/* NOTE: backdrop-filter removed globally — it caused GPU compositing glitches on Android.
+   Only applied selectively via explicit utility classes on specific elements. */
 .bg-white,
 .glass-panel {
-  background: rgba(18, 18, 22, 0.75) !important;
-  backdrop-filter: blur(18px) !important;
-  -webkit-backdrop-filter: blur(18px) !important;
+  background: rgba(18, 18, 22, 0.92) !important;
   border: 1px solid rgba(255, 255, 255, 0.09) !important;
   color: #ECE9E4 !important;
 }
@@ -99,13 +99,13 @@ input:focus, textarea:focus, select:focus {
 
 /* Luxury Card Shadow & Hover states */
 .luxury-card {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
   background: rgba(18, 18, 22, 0.5) !important;
   border: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 .luxury-card:hover {
-  transform: translateY(-4px);
+  /* Removed transform: translateY — causes GPU layer thrashing on mobile */
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 2px 1px rgba(226, 195, 126, 0.15) !important;
   border-color: rgba(226, 195, 126, 0.25) !important;
 }
@@ -129,7 +129,32 @@ input:focus, textarea:focus, select:focus {
   background: #E2C37E;
 }
 
-/* Scroll reveal helper */
+/* Scroll reveal helper - disabled will-change to prevent GPU layer explosion on mobile */
 .reveal-on-scroll {
-  will-change: transform, opacity;
+  /* will-change: transform, opacity; — removed: causes compositing glitches on Android */
+}
+
+/* Prevent animation glitches on Android by reducing GPU layer count */
+@media (max-width: 768px) {
+  .animate-pulse,
+  .animate-bounce,
+  .animate-ping,
+  .animate-spin {
+    animation-duration: 3s;
+  }
+
+  /* Disable backdrop-filter on mobile entirely */
+  .backdrop-blur-md,
+  .backdrop-blur-xl,
+  .backdrop-blur-sm {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background-color: rgba(10, 10, 12, 0.95) !important;
+  }
+
+  /* Prevent scale transforms on images causing tearing */
+  img {
+    transform: none !important;
+    will-change: auto !important;
+  }
 }
