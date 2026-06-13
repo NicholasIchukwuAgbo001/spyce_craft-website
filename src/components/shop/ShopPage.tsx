@@ -53,18 +53,15 @@ export default function ShopPage() {
       );
     }
 
-    // 2. Category
     if (selectedCategory !== 'All') {
       result = result.filter((p) => p.category === selectedCategory);
     }
 
-    // 3. Price bracket
     result = result.filter((p) => {
       const actualPrice = p.salePrice ?? p.price;
       return actualPrice >= minPrice && actualPrice <= maxPrice;
     });
 
-    // 4. Color variation
     if (selectedColor !== 'All') {
       result = result.filter((p) => p.colors.some((c) => c.toLowerCase().includes(selectedColor.toLowerCase())));
     }
