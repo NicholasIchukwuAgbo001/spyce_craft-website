@@ -460,7 +460,7 @@ export default function ShopPage() {
 
                         {/* Products grid - Mobile 2 Column, Tablet 3 Column, Desktop 4 Column */}
                         {paginatedProducts.length > 0 ? (
-                            <div id="catalog-products-grid" className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 bg-stone-50">
+                            <div id="catalog-products-grid" className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 bg-stone-50 isolate">
                                 {paginatedProducts.map((product, productIndex) => {
                                     const actualPrice = product.salePrice ?? product.price;
                                     const isSaved = wishlist.some((w) => w.id === product.id);
@@ -475,10 +475,10 @@ export default function ShopPage() {
                                             onClick={() => navigateTo('product-detail', product.slug)}
                                             onMouseEnter={() => setHoveredCardId(product.id)}
                                             onMouseLeave={() => setHoveredCardId(null)}
-                                            className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-between"
+                                            className="group bg-white rounded-b-2xl border border-stone-200 shadow-sm cursor-pointer flex flex-col justify-between"
                                         >
                                             {/* Visual area � overflow-hidden prevents image bleed into adjacent GPU layers */}
-                                            <div className="relative aspect-square bg-stone-100 overflow-hidden">
+                                            <div className="relative aspect-square bg-stone-100 overflow-hidden rounded-t-2xl">
                                                 {/* Primary image always rendered, secondary pre-loaded beneath via opacity swap � avoids src change GPU tear */}
                                                 <img
                                                     src={product.images[0]}
