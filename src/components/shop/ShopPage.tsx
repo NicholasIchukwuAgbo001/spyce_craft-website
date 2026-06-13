@@ -27,6 +27,7 @@ export default function ShopPage() {
     const [quickAddSize, setQuickAddSize] = useState('');
     const [quickAddColor, setQuickAddColor] = useState('');
     const [cartToastProduct, setCartToastProduct] = useState<Product | null>(null);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     // Dropdown list arrays
     const categories = useMemo(() => {
@@ -229,191 +230,204 @@ export default function ShopPage() {
                 <div id="shop-toolbar" className="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
                     {/* Left Side Filters Sidebar Column */}
-                    <div id="shop-filters-sidebar" className="space-y-6 lg:col-span-1 bg-brand-muted p-5 sm:p-6 rounded-2xl border border-brand-secondary/40 lg:sticky lg:top-24 max-h-[85vh] overflow-y-auto">
+                    <div id="shop-filters-sidebar" className="space-y-6 lg:col-span-1 bg-brand-muted p-5 sm:p-6 rounded-2xl border border-brand-secondary/40 lg:sticky lg:top-24 lg:max-h-[85vh] lg:overflow-y-auto">
 
                         <div className="flex items-center justify-between border-b border-brand-secondary/60 pb-3">
                             <span className="font-serif text-base font-bold text-brand-dark flex items-center gap-2">
                                 <SlidersHorizontal className="w-4 h-4 text-brand-primary" />
                                 Refine Art
                             </span>
-                            {(searchTerm || selectedCategory !== 'All' || selectedColor !== 'All' || selectedMaterial !== 'All' || selectedSize !== 'All' || minRating > 0 || inStockOnly || customizableOnly || minPrice > 0 || maxPrice < 100000) && (
-                                <button
-                                    id="reset-filters-btn"
-                                    onClick={() => {
-                                        setSearchTerm('');
-                                        setSelectedCategory('All');
-                                        setMinPrice(0);
-                                        setMaxPrice(100000);
-                                        setSelectedColor('All');
-                                        setSelectedMaterial('All');
-                                        setSelectedSize('All');
-                                        setMinRating(0);
-                                        setInStockOnly(false);
-                                        setCustomizableOnly(false);
-                                        setSortOption('featured');
-                                    }}
-                                    className="text-[10px] text-brand-primary hover:underline font-semibold font-sans uppercase tracking-wider"
-                                >
-                                    Clear All
-                                </button>
-                            )}
-                        </div>
-
-                        {/* Keyword Search */}
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Search Catalog</label>
-                            <div className="relative">
-                                <input
-                                    id="keyword-search-input"
-                                    type="text"
-                                    placeholder="Keep Going, tray, floral..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                    className="w-full px-3.5 py-2 pl-9 text-stone-800 bg-white border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-xs font-sans"
-                                />
-                                <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-3" />
-                            </div>
-                        </div>
-
-                        {/* Category Filter */}
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Medium Category</label>
-                            <select
-                                id="filter-category-select"
-                                value={selectedCategory}
-                                onChange={(e) => setSelectedCategory(e.target.value)}
-                                className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary"
-                            >
-                                {categories.map((cat) => (
-                                    <option key={cat} value={cat}>{cat}</option>
-                                ))}
-                            </select>
-                        </div>
-
-                        {/* Price Filter range */}
-                        <div className="space-y-2 pt-2 border-t border-brand-secondary/40">
-                            <div className="flex items-center justify-between">
-                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Max Budget</label>
-                                <span className="text-xs font-bold font-mono text-brand-primary">{formatNaira(maxPrice)}</span>
-                            </div>
-                            <input
-                                id="price-range-slider"
-                                type="range"
-                                min="10000"
-                                max="100000"
-                                step="5000"
-                                value={maxPrice}
-                                onChange={(e) => setMaxPrice(parseInt(e.target.value))}
-                                className="w-full accent-brand-primary cursor-pointer"
-                            />
-                            <div className="flex justify-between text-[10px] text-stone-400 font-mono">
-                                <span>NGN 10,000</span>
-                                <span>NGN 100,000</span>
-                            </div>
-                        </div>
-
-                        {/* Color Filter */}
-                        <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
-                            <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Frame/Resin Colors</label>
-                            <select
-                                id="filter-color-select"
-                                value={selectedColor}
-                                onChange={(e) => setSelectedColor(e.target.value)}
-                                className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary">
-                                {colors.map((c) => (
-                                    <option key={c} value={c}>{c}</option>
-                                ))}
-                            </select>
-                        </div>
-
-                        <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
-                            <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Atelier Core Material</label>
-                            <select
-                                id="filter-material-select"
-                                value={selectedMaterial}
-                                onChange={(e) => setSelectedMaterial(e.target.value)}
-                                className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary">
-                                {materials.map((m) => (
-                                    <option key={m} value={m}>{m}</option>
-                                ))}
-                            </select>
-                        </div>
-
-                        {/* Size Filter */}
-                        <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
-                            <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Desired Dimensions</label>
-                            <select
-                                id="filter-size-select"
-                                value={selectedSize}
-                                onChange={(e) => setSelectedSize(e.target.value)}
-                                className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary">
-                                {sizes.map((s) => (
-                                    <option key={s} value={s}>{s}</option>
-                                ))}
-                            </select>
-                        </div>
-
-                        {/* Minimum Rating */}
-                        <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
-                            <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Minimum Rating</label>
-                            <div className="flex items-center gap-1.5 font-sans">
-                                {[0, 4.0, 4.5, 4.8].map((score) => (
+                            <div className="flex items-center gap-2">
+                                {(searchTerm || selectedCategory !== 'All' || selectedColor !== 'All' || selectedMaterial !== 'All' || selectedSize !== 'All' || minRating > 0 || inStockOnly || customizableOnly || minPrice > 0 || maxPrice < 100000) && (
                                     <button
-                                        key={score}
-                                        type="button"
-                                        onClick={() => setMinRating(score)}
-                                        className={`px-2 py-1 rounded text-[10px] font-semibold border transition-all ${minRating === score
-                                            ? 'bg-brand-primary text-white border-brand-primary'
-                                            : 'bg-white text-stone-500 border-stone-200 hover:border-brand-primary'
-                                            }`}
+                                        id="reset-filters-btn"
+                                        onClick={() => {
+                                            setSearchTerm('');
+                                            setSelectedCategory('All');
+                                            setMinPrice(0);
+                                            setMaxPrice(100000);
+                                            setSelectedColor('All');
+                                            setSelectedMaterial('All');
+                                            setSelectedSize('All');
+                                            setMinRating(0);
+                                            setInStockOnly(false);
+                                            setCustomizableOnly(false);
+                                            setSortOption('featured');
+                                        }}
+                                        className="text-[10px] text-brand-primary hover:underline font-semibold font-sans uppercase tracking-wider"
                                     >
-                                        {score === 0 ? 'All' : `${score}⭐`}
+                                        Clear All
                                     </button>
-                                ))}
+                                )}
+                                {/* Mobile toggle — only visible on small screens */}
+                                <button
+                                    className="lg:hidden text-[10px] text-stone-400 font-sans uppercase tracking-wider px-2 py-1 border border-white/10 rounded"
+                                    onClick={() => setSidebarOpen(o => !o)}
+                                >
+                                    {sidebarOpen ? 'Hide' : 'Show Filters'}
+                                </button>
                             </div>
                         </div>
 
-                        {/* Toggles (Stock & Customization) */}
-                        <div className="space-y-2 pt-2 border-t border-brand-secondary/40 font-sans text-xs">
-                            <label className="flex items-center gap-2 cursor-pointer select-none text-stone-700 font-medium">
-                                <input
-                                    type="checkbox"
-                                    checked={inStockOnly}
-                                    onChange={(e) => setInStockOnly(e.target.checked)}
-                                    className="w-4 h-4 accent-brand-primary rounded"
-                                />
-                                <span>In Stock Only</span>
-                            </label>
+                        {/* On mobile only render filters when open — prevents compositor layer from being created on initial paint */}
+                        <div className={`${sidebarOpen ? 'block' : 'hidden'} lg:block space-y-4`}>
 
-                            <label className="flex items-center gap-2 cursor-pointer select-none text-stone-700 font-medium">
-                                <input
-                                    type="checkbox"
-                                    checked={customizableOnly}
-                                    onChange={(e) => setCustomizableOnly(e.target.checked)}
-                                    className="w-4 h-4 accent-brand-primary rounded"
-                                />
-                                <span>Customizable Designs Only</span>
-                            </label>
-                        </div>
+                            {/* Keyword Search */}
+                            <div className="space-y-1.5">
+                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Search Catalog</label>
+                                <div className="relative">
+                                    <input
+                                        id="keyword-search-input"
+                                        type="text"
+                                        placeholder="Keep Going, tray, floral..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        className="w-full px-3.5 py-2 pl-9 text-stone-800 bg-white border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-xs font-sans"
+                                    />
+                                    <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-3" />
+                                </div>
+                            </div>
 
-                        {/* Quick Atelier Flyer */}
-                        <div className="p-4 rounded-xl bg-brand-secondary/35 relative overflow-hidden text-stone-100">
-                            <h4 className="font-serif text-xs font-bold text-brand-dark mb-1 flex items-center gap-1">
-                                <Sparkles className="w-3.5 h-3.5 text-brand-primary" />
-                                Want bespoke sizing?
-                            </h4>
-                            <p className="text-[10px] leading-relaxed text-stone-500 font-sans mb-3">
-                                Send your measurements and custom notes straight to our slow-curing studio.
-                            </p>
-                            <button
-                                id="sidebar-custom-redirect"
-                                onClick={() => navigateTo('contact')}
-                                className="w-full py-2 bg-brand-dark hover:bg-stone-800 text-white text-[10px] font-bold uppercase tracking-widest rounded-lg transition-colors cursor-pointer"
-                            >
-                                Contact Us
-                            </button>
-                        </div>
-                    </div>
+                            {/* Category Filter */}
+                            <div className="space-y-1.5">
+                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Medium Category</label>
+                                <select
+                                    id="filter-category-select"
+                                    value={selectedCategory}
+                                    onChange={(e) => setSelectedCategory(e.target.value)}
+                                    className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary"
+                                >
+                                    {categories.map((cat) => (
+                                        <option key={cat} value={cat}>{cat}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            {/* Price Filter range */}
+                            <div className="space-y-2 pt-2 border-t border-brand-secondary/40">
+                                <div className="flex items-center justify-between">
+                                    <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Max Budget</label>
+                                    <span className="text-xs font-bold font-mono text-brand-primary">{formatNaira(maxPrice)}</span>
+                                </div>
+                                <input
+                                    id="price-range-slider"
+                                    type="range"
+                                    min="10000"
+                                    max="100000"
+                                    step="5000"
+                                    value={maxPrice}
+                                    onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+                                    className="w-full accent-brand-primary cursor-pointer"
+                                />
+                                <div className="flex justify-between text-[10px] text-stone-400 font-mono">
+                                    <span>NGN 10,000</span>
+                                    <span>NGN 100,000</span>
+                                </div>
+                            </div>
+
+                            {/* Color Filter */}
+                            <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
+                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Frame/Resin Colors</label>
+                                <select
+                                    id="filter-color-select"
+                                    value={selectedColor}
+                                    onChange={(e) => setSelectedColor(e.target.value)}
+                                    className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary">
+                                    {colors.map((c) => (
+                                        <option key={c} value={c}>{c}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
+                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Atelier Core Material</label>
+                                <select
+                                    id="filter-material-select"
+                                    value={selectedMaterial}
+                                    onChange={(e) => setSelectedMaterial(e.target.value)}
+                                    className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary">
+                                    {materials.map((m) => (
+                                        <option key={m} value={m}>{m}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            {/* Size Filter */}
+                            <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
+                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Desired Dimensions</label>
+                                <select
+                                    id="filter-size-select"
+                                    value={selectedSize}
+                                    onChange={(e) => setSelectedSize(e.target.value)}
+                                    className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary">
+                                    {sizes.map((s) => (
+                                        <option key={s} value={s}>{s}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            {/* Minimum Rating */}
+                            <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
+                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Minimum Rating</label>
+                                <div className="flex items-center gap-1.5 font-sans">
+                                    {[0, 4.0, 4.5, 4.8].map((score) => (
+                                        <button
+                                            key={score}
+                                            type="button"
+                                            onClick={() => setMinRating(score)}
+                                            className={`px-2 py-1 rounded text-[10px] font-semibold border transition-all ${minRating === score
+                                                ? 'bg-brand-primary text-white border-brand-primary'
+                                                : 'bg-white text-stone-500 border-stone-200 hover:border-brand-primary'
+                                                }`}
+                                        >
+                                            {score === 0 ? 'All' : `${score}⭐`}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Toggles (Stock & Customization) */}
+                            <div className="space-y-2 pt-2 border-t border-brand-secondary/40 font-sans text-xs">
+                                <label className="flex items-center gap-2 cursor-pointer select-none text-stone-700 font-medium">
+                                    <input
+                                        type="checkbox"
+                                        checked={inStockOnly}
+                                        onChange={(e) => setInStockOnly(e.target.checked)}
+                                        className="w-4 h-4 accent-brand-primary rounded"
+                                    />
+                                    <span>In Stock Only</span>
+                                </label>
+
+                                <label className="flex items-center gap-2 cursor-pointer select-none text-stone-700 font-medium">
+                                    <input
+                                        type="checkbox"
+                                        checked={customizableOnly}
+                                        onChange={(e) => setCustomizableOnly(e.target.checked)}
+                                        className="w-4 h-4 accent-brand-primary rounded"
+                                    />
+                                    <span>Customizable Designs Only</span>
+                                </label>
+                            </div>
+
+                            {/* Quick Atelier Flyer */}
+                            <div className="p-4 rounded-xl bg-brand-secondary/35 relative overflow-hidden text-stone-100">
+                                <h4 className="font-serif text-xs font-bold text-brand-dark mb-1 flex items-center gap-1">
+                                    <Sparkles className="w-3.5 h-3.5 text-brand-primary" />
+                                    Want bespoke sizing?
+                                </h4>
+                                <p className="text-[10px] leading-relaxed text-stone-500 font-sans mb-3">
+                                    Send your measurements and custom notes straight to our slow-curing studio.
+                                </p>
+                                <button
+                                    id="sidebar-custom-redirect"
+                                    onClick={() => navigateTo('contact')}
+                                    className="w-full py-2 bg-brand-dark hover:bg-stone-800 text-white text-[10px] font-bold uppercase tracking-widest rounded-lg transition-colors cursor-pointer"
+                                >
+                                    Contact Us
+                                </button>
+                            </div>
+                        </div>{/* end collapsible filter content */}
+                    </div>{/* end shop-filters-sidebar */}
 
                     {/* Right Side Products list Column */}
                     <div id="shop-catalog-section" className="lg:col-span-3 space-y-6">
