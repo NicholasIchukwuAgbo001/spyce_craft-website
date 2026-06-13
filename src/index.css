@@ -86,4 +86,12 @@ textarea::placeholder {
   .animate-ping, .animate-fadeIn, .animate-slideIn {
     animation: none !important;
   }
+
+  /* Prevent product cards from creating extra GPU compositing layers */
+  #catalog-products-grid > div,
+  #dynamic-custom-subview .grid > div {
+    transform: none !important;
+    will-change: auto !important;
+    isolation: auto !important;
+  }
 }

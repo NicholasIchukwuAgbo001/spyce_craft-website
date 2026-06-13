@@ -877,7 +877,7 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
                         </div>
                     </div>
 
-                    {/* Product grid — capped at 6 cards max to prevent GPU overload on mobile */}
+                    {/* Product grid ï¿½ capped at 6 cards max to prevent GPU overload on mobile */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         {(() => {
                             const matched = PRODUCTS.filter((prod) => {
@@ -899,12 +899,12 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
                                         key={prod.id}
                                         className="rounded-xl overflow-hidden bg-[#111114] border border-white/8 flex flex-col"
                                     >
-                                        {/* Image — no transform, no overlay, no filter */}
+                                        {/* Image â€” no transform, no overlay, no filter */}
                                         <div className="relative aspect-square overflow-hidden bg-stone-900">
                                             <img
                                                 src={prod.images[0]}
                                                 alt={prod.name}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover block"
                                                 loading="lazy"
                                             />
                                             {prod.salePrice ? (
@@ -924,7 +924,7 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
                                             </button>
                                         </div>
 
-                                        {/* Details — no group-hover, no transitions except color */}
+                                        {/* Details ï¿½ no group-hover, no transitions except color */}
                                         <div className="p-4 flex flex-col gap-3 flex-1">
                                             <div>
                                                 <span className="text-[10px] text-brand-primary uppercase font-bold">{prod.category}</span>

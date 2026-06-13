@@ -460,7 +460,7 @@ export default function ShopPage() {
 
                         {/* Products grid - Mobile 2 Column, Tablet 3 Column, Desktop 4 Column */}
                         {paginatedProducts.length > 0 ? (
-                            <div id="catalog-products-grid" className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 bg-stone-50 isolate">
+                            <div id="catalog-products-grid" className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 bg-stone-50">
                                 {paginatedProducts.map((product, productIndex) => {
                                     const actualPrice = product.salePrice ?? product.price;
                                     const isSaved = wishlist.some((w) => w.id === product.id);
@@ -477,28 +477,17 @@ export default function ShopPage() {
                                             onMouseLeave={() => setHoveredCardId(null)}
                                             className="group bg-white rounded-b-2xl border border-stone-200 shadow-sm cursor-pointer flex flex-col justify-between"
                                         >
-                                            {/* Visual area � overflow-hidden prevents image bleed into adjacent GPU layers */}
+                                            {/* Visual area — contain image within bounds, no GPU layer promotion */}
                                             <div className="relative aspect-square bg-stone-100 overflow-hidden rounded-t-2xl">
-                                                {/* Primary image always rendered, secondary pre-loaded beneath via opacity swap � avoids src change GPU tear */}
+                                                {/* Single image, swap src on hover — avoids stacking two absolute layers */}
                                                 <img
-                                                    src={product.images[0]}
+                                                    src={isHovered && product.images[1] ? product.images[1] : product.images[0]}
                                                     alt={product.name}
-                                                    className={`absolute inset-0 w-full h-full object-cover`}
+                                                    className="w-full h-full object-cover block"
                                                     referrerPolicy="no-referrer"
                                                     loading={isAboveFold ? 'eager' : 'lazy'}
                                                     decoding={isAboveFold ? 'sync' : 'async'}
                                                 />
-                                                {product.images[1] && isHovered && (
-                                                    <img
-                                                        src={product.images[1]}
-                                                        alt=""
-                                                        aria-hidden="true"
-                                                        className="absolute inset-0 w-full h-full object-cover"
-                                                        referrerPolicy="no-referrer"
-                                                        loading="lazy"
-                                                        decoding="async"
-                                                    />
-                                                )}
 
                                                 {/* Custom label badges */}
                                                 {badge && (
@@ -554,15 +543,15 @@ export default function ShopPage() {
                                                     <div className="flex items-baseline justify-between">
                                                         {product.salePrice ? (
                                                             <div className="flex items-baseline gap-1">
-                                                                <span className="font-mono text-xs sm:text-sm font-bold text-brand-primary">
+                                                                <span className="font-sans text-xs sm:text-sm font-bold text-brand-primary tabular-nums">
                                                                     {formatNaira(product.salePrice)}
                                                                 </span>
-                                                                <span className="font-mono text-[10px] text-stone-400 line-through">
+                                                                <span className="font-sans text-[10px] text-stone-400 line-through tabular-nums">
                                                                     {formatNaira(product.price)}
                                                                 </span>
                                                             </div>
                                                         ) : (
-                                                            <span className="font-mono text-xs sm:text-sm font-bold text-stone-700">
+                                                            <span className="font-sans text-xs sm:text-sm font-bold text-stone-700 tabular-nums">
                                                                 {formatNaira(product.price)}
                                                             </span>
                                                         )}
