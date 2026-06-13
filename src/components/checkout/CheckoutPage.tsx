@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { openWhatsAppCheckout } from '../../lib/whatsapp';
 import { ShoppingBag, ArrowLeft, Send, MessageSquare, CheckCircle, ShieldCheck } from 'lucide-react';
@@ -95,7 +95,7 @@ export default function CheckoutPage() {
                         <ArrowLeft className="w-4 h-4" />
                         <span>Continue Shopping</span>
                     </button>
-                    <span className="text-xs text-stone-400 font-sans">Checkout Step &gt; Invoice Generation</span>
+                    <span className="text-xs text-stone-500 font-sans">Checkout Step &gt; Invoice Generation</span>
                 </div>
 
                 {isRedirected ? (
@@ -150,13 +150,13 @@ export default function CheckoutPage() {
 
                             <div>
                                 <h2 className="font-serif text-2xl font-bold text-brand-dark mb-1">Shipping Details</h2>
-                                <p className="text-xs text-stone-300 font-sans">Payment is processed securely upon production invoice. We deliver nationwide.</p>
+                                <p className="text-xs text-stone-500 font-sans">Payment is processed securely upon production invoice. We deliver nationwide.</p>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                                 <div className="space-y-1.5">
-                                    <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">Full Name *</label>
+                                    <label className="text-xs uppercase text-stone-600 font-sans font-bold tracking-wider block">Full Name *</label>
                                     <input
                                         id="checkout-fullname-input"
                                         type="text"
@@ -169,7 +169,7 @@ export default function CheckoutPage() {
                                 </div>
 
                                 <div className="space-y-1.5">
-                                    <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">WhatsApp Number *</label>
+                                    <label className="text-xs uppercase text-stone-600 font-sans font-bold tracking-wider block">WhatsApp Number *</label>
                                     <input
                                         id="checkout-phone-input"
                                         type="tel"
@@ -182,7 +182,7 @@ export default function CheckoutPage() {
                                 </div>
 
                                 <div className="space-y-1.5 sm:col-span-2">
-                                    <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">Email Address (Optional)</label>
+                                    <label className="text-xs uppercase text-stone-600 font-sans font-bold tracking-wider block">Email Address (Optional)</label>
                                     <input
                                         id="checkout-email-input"
                                         type="email"
@@ -194,7 +194,7 @@ export default function CheckoutPage() {
                                 </div>
 
                                 <div className="space-y-1.5 sm:col-span-2">
-                                    <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">Full Destination Address *</label>
+                                    <label className="text-xs uppercase text-stone-600 font-sans font-bold tracking-wider block">Full Destination Address *</label>
                                     <input
                                         id="checkout-address-input"
                                         type="text"
@@ -207,7 +207,7 @@ export default function CheckoutPage() {
                                 </div>
 
                                 <div className="space-y-1.5">
-                                    <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">City *</label>
+                                    <label className="text-xs uppercase text-stone-600 font-sans font-bold tracking-wider block">City *</label>
                                     <input
                                         id="checkout-city-input"
                                         type="text"
@@ -220,7 +220,7 @@ export default function CheckoutPage() {
                                 </div>
 
                                 <div className="space-y-1.5">
-                                    <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">State *</label>
+                                    <label className="text-xs uppercase text-stone-600 font-sans font-bold tracking-wider block">State *</label>
                                     <input
                                         id="checkout-state-input"
                                         type="text"
@@ -233,7 +233,7 @@ export default function CheckoutPage() {
                                 </div>
 
                                 <div className="space-y-1.5 sm:col-span-2">
-                                    <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">Specific Delivery Instructions</label>
+                                    <label className="text-xs uppercase text-stone-600 font-sans font-bold tracking-wider block">Specific Delivery Instructions</label>
                                     <textarea
                                         id="checkout-notes-textarea"
                                         rows={3}
@@ -254,8 +254,8 @@ export default function CheckoutPage() {
                                     <MessageSquare className="w-4.5 h-4.5" />
                                     <span>Confirm Order &amp; Open WhatsApp</span>
                                 </button>
-                                <p className="text-center text-[10px] text-stone-400 font-sans mt-2">
-                                    This will open <strong className="text-emerald-400">WhatsApp</strong> with your order pre-filled — just tap <strong>Send</strong>.
+                                <p className="text-center text-[10px] text-stone-500 font-sans mt-2">
+                                    This will open <strong className="text-emerald-400">WhatsApp</strong> with your order pre-filled � just tap <strong>Send</strong>.
                                 </p>
                             </div>
 
@@ -287,13 +287,13 @@ export default function CheckoutPage() {
 
                                 {/* Subtotals & Delivery multipliers */}
                                 <div className="border-t border-stone-200 pt-4 space-y-2 text-xs">
-                                    <div className="flex justify-between text-stone-300">
+                                    <div className="flex justify-between text-stone-600">
                                         <span>Subtotal Sum</span>
-                                        <span className="font-mono text-stone-200">{formatNaira(subtotal)}</span>
+                                        <span className="font-mono text-stone-700">{formatNaira(subtotal)}</span>
                                     </div>
-                                    <div className="flex justify-between text-stone-300">
+                                    <div className="flex justify-between text-stone-600">
                                         <span>Regional Deliveries (Naira flat-rate)</span>
-                                        <span className="font-mono text-stone-200">{deliveryFee === 0 ? 'FREE' : formatNaira(deliveryFee)}</span>
+                                        <span className="font-mono text-stone-700">{deliveryFee === 0 ? 'FREE' : formatNaira(deliveryFee)}</span>
                                     </div>
                                     <div className="border-t border-dashed border-stone-200 pt-3 flex justify-between text-sm font-bold text-stone-900">
                                         <span className="font-serif text-brand-dark">Grand Invoice Total</span>
