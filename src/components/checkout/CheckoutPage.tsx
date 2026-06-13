@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { openWhatsAppCheckout } from '../../lib/whatsapp';
 import { ShoppingBag, ArrowLeft, Send, MessageSquare, CheckCircle, ShieldCheck } from 'lucide-react';
@@ -29,7 +29,7 @@ export default function CheckoutPage() {
  const total = getCartTotal();
 
  const formatNaira = (val: number) => {
- return '₦' + val.toLocaleString('en-NG');
+ return 'NGN ' + val.toLocaleString('en-NG');
  };
 
  const handleCheckoutSubmit = (e: React.FormEvent) => {
@@ -81,7 +81,7 @@ export default function CheckoutPage() {
  }
 
  return (
- <main id="checkout-layout-page" className="py-12 bg-white min-h-screen text-stone-800">
+ <main id="checkout-layout-page" className="py-12 bg-white min-h-screen text-stone-100">
 
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -150,13 +150,13 @@ export default function CheckoutPage() {
 
  <div>
  <h2 className="font-serif text-2xl font-bold text-brand-dark mb-1">Shipping Details</h2>
- <p className="text-xs text-stone-500 font-sans">Payment is processed securely upon production invoice. We deliver nationwide.</p>
+ <p className="text-xs text-stone-300 font-sans">Payment is processed securely upon production invoice. We deliver nationwide.</p>
  </div>
 
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">Full Name *</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">Full Name *</label>
  <input
  id="checkout-fullname-input"
  type="text"
@@ -164,12 +164,12 @@ export default function CheckoutPage() {
  placeholder="e.g. John Doe"
  value={fullName}
  onChange={(e) => setFullName(e.target.value)}
- className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans"
+ className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans text-stone-800"
  />
  </div>
 
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">WhatsApp Number *</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">WhatsApp Number *</label>
  <input
  id="checkout-phone-input"
  type="tel"
@@ -177,24 +177,24 @@ export default function CheckoutPage() {
  placeholder="e.g. +234 81 2345 6789"
  value={phone}
  onChange={(e) => setPhone(e.target.value)}
- className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans"
+ className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans text-stone-800"
  />
  </div>
 
  <div className="space-y-1.5 sm:col-span-2">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">Email Address (Optional)</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">Email Address (Optional)</label>
  <input
  id="checkout-email-input"
  type="email"
  placeholder="e.g. name@email.com"
  value={email}
  onChange={(e) => setEmail(e.target.value)}
- className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans"
+ className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans text-stone-800"
  />
  </div>
 
  <div className="space-y-1.5 sm:col-span-2">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">Full Destination Address *</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">Full Destination Address *</label>
  <input
  id="checkout-address-input"
  type="text"
@@ -202,12 +202,12 @@ export default function CheckoutPage() {
  placeholder="Street, Plot number, Estate area details..."
  value={address}
  onChange={(e) => setAddress(e.target.value)}
- className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans"
+ className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans text-stone-800"
  />
  </div>
 
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">City *</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">City *</label>
  <input
  id="checkout-city-input"
  type="text"
@@ -215,12 +215,12 @@ export default function CheckoutPage() {
  placeholder="e.g. Lagos Island, Ikeja, Garki, Wuse"
  value={city}
  onChange={(e) => setCity(e.target.value)}
- className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans"
+ className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans text-stone-800"
  />
  </div>
 
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">State *</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">State *</label>
  <input
  id="checkout-state-input"
  type="text"
@@ -228,19 +228,19 @@ export default function CheckoutPage() {
  placeholder="e.g. Lagos, Abuja, Enugu, Rivers"
  value={state}
  onChange={(e) => setState(e.target.value)}
- className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans"
+ className="w-full px-4 py-2.5 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans text-stone-800"
  />
  </div>
 
  <div className="space-y-1.5 sm:col-span-2">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">Specific Delivery Instructions</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">Specific Delivery Instructions</label>
  <textarea
  id="checkout-notes-textarea"
  rows={3}
  placeholder="e.g. Deliver before Friday afternoon. Please keep background text alignment centered..."
  value={checkoutNotes}
  onChange={(e) => setCheckoutNotes(e.target.value)}
- className="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans"
+ className="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary text-sm font-sans text-stone-800"
  />
  </div>
  </div>
@@ -287,13 +287,13 @@ export default function CheckoutPage() {
 
  {/* Subtotals & Delivery multipliers */}
  <div className="border-t border-stone-200 pt-4 space-y-2 text-xs">
- <div className="flex justify-between text-stone-500">
+ <div className="flex justify-between text-stone-300">
  <span>Subtotal Sum</span>
- <span className="font-mono text-stone-800">{formatNaira(subtotal)}</span>
+ <span className="font-mono text-stone-700">{formatNaira(subtotal)}</span>
  </div>
- <div className="flex justify-between text-stone-500">
+ <div className="flex justify-between text-stone-300">
  <span>Regional Deliveries (Naira flat-rate)</span>
- <span className="font-mono text-stone-800">{deliveryFee === 0 ? 'FREE' : formatNaira(deliveryFee)}</span>
+ <span className="font-mono text-stone-700">{deliveryFee === 0 ? 'FREE' : formatNaira(deliveryFee)}</span>
  </div>
  <div className="border-t border-dashed border-stone-200 pt-3 flex justify-between text-sm font-bold text-stone-900">
  <span className="font-serif text-brand-dark">Grand Invoice Total</span>

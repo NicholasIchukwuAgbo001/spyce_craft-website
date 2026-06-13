@@ -1,9 +1,9 @@
-import { CartItem, CheckoutDetails } from '../types';
+﻿import { CartItem, CheckoutDetails } from '../types';
 
 export const WHATSAPP_PHONE_NUMBER = '2349069996290'; 
 
 const formatNaira = (value: number) => {
-  return '₦' + value.toLocaleString('en-NG');
+  return 'NGN ' + value.toLocaleString('en-NG');
 };
 
 export function generateOrderMessage(

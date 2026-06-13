@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { Trash2, ArrowLeft, ArrowRight, ShoppingBag, ShieldCheck, Ticket, RotateCcw, AlertCircle } from 'lucide-react';
 
@@ -19,7 +19,7 @@ export default function CartPage() {
  const [couponSuccess, setCouponSuccess] = useState('');
 
  const formatNaira = (val: number) => {
- return '₦' + val.toLocaleString('en-NG');
+ return 'NGN ' + val.toLocaleString('en-NG');
  };
 
  const applyCoupon = (e: React.FormEvent) => {
@@ -49,7 +49,7 @@ export default function CartPage() {
  const delivery = getDeliveryFee();
  const total = getCartTotal() - discountAmount;
 
- // Calculate free shipping progress bar up to ₦100,000 Naira
+ // Calculate free shipping progress bar up to NGN 100,000 Naira
  const freeShippingThreshold = 100000;
  const shippingPercent = Math.min((subtotal / freeShippingThreshold) * 100, 100);
  const toFreeShipping = Math.max(freeShippingThreshold - subtotal, 0);
@@ -202,7 +202,7 @@ export default function CartPage() {
 
  {/* Voucher input form */}
  <form onSubmit={applyCoupon} className="space-y-2">
- <label className="text-[10px] uppercase text-stone-400 font-sans font-bold tracking-wider block">Promo Voucher Code</label>
+ <label className="text-[10px] uppercase text-stone-200 font-sans font-bold tracking-wider block">Promo Voucher Code</label>
  <div className="flex gap-2">
  <div className="relative grow">
  <input
@@ -211,7 +211,7 @@ export default function CartPage() {
  placeholder="e.g. SPYCE10"
  value={couponCode}
  onChange={(e) => setCouponCode(e.target.value)}
- className="w-full px-4 py-2 pl-9 bg-white border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary placeholder:text-stone-300 text-xs font-sans text-stone-800"
+ className="w-full px-4 py-2 pl-9 bg-white border border-stone-200 rounded-xl focus:outline-none focus:border-brand-primary placeholder:text-stone-400 text-xs font-sans text-stone-100"
  />
  <Ticket className="w-4 h-4 text-stone-400 absolute left-3 top-3" />
  </div>
@@ -229,8 +229,7 @@ export default function CartPage() {
 
  {/* Price Breakdowns */}
  <div className="space-y-3 font-sans text-xs border-t border-brand-secondary/60 pt-4">
- <div className="flex justify-between text-stone-500">
- <span>Atelier Subtotal</span>
+ <div className="flex justify-between text-stone-700"><span>Atelier Subtotal</span>
  <span className="font-mono text-stone-700">{formatNaira(subtotal)}</span>
  </div>
  {discountAmount > 0 && (
@@ -239,8 +238,7 @@ export default function CartPage() {
  <span className="font-mono">-{formatNaira(discountAmount)}</span>
  </div>
  )}
- <div className="flex justify-between text-stone-500">
- <span>Nationwide Shipping</span>
+ <div className="flex justify-between text-stone-700"><span>Nationwide Shipping</span>
  <span className="font-mono text-stone-700">{delivery === 0 ? 'FREE' : formatNaira(delivery)}</span>
  </div>
  <div className="flex justify-between text-base font-bold text-brand-dark border-t border-brand-secondary/40 pt-3">

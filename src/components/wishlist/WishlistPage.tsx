@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,7 +11,7 @@ export default function WishlistPage() {
  const { wishlist, toggleWishlist, moveToCart, navigateTo, addItem } = useCartStore();
 
  const formatNaira = (val: number) => {
- return '₦' + val.toLocaleString('en-NG');
+ return 'NGN ' + val.toLocaleString('en-NG');
  };
 
  const handleMoveAllToCart = () => {

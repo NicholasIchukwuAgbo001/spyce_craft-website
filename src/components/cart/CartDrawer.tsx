@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { X, ShoppingBag, Trash2, Plus, Minus, ArrowRight, ShieldCheck, HelpCircle } from 'lucide-react';
 
@@ -22,7 +22,7 @@ export default function CartDrawer() {
  const total = getCartTotal();
 
  const formatNaira = (val: number) => {
- return '₦' + val.toLocaleString('en-NG');
+ return 'NGN ' + val.toLocaleString('en-NG');
  };
 
  return (
@@ -31,7 +31,7 @@ export default function CartDrawer() {
  <div className="absolute inset-0 cursor-pointer" onClick={() => setCartOpen(false)} />
 
  {/* Drawer Body container */}
- <div className="relative w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between animate-slideLeft border-l border-stone-100 text-stone-800">
+ <div className="relative w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between animate-slideLeft border-l border-stone-100 text-stone-100">
 
  {/* Drawer Header info */}
  <div className="p-6 border-b border-stone-100 flex items-center justify-between">
@@ -96,7 +96,7 @@ export default function CartDrawer() {
  >
  <Minus className="w-3 h-3" />
  </button>
- <span className="px-3 font-semibold font-mono text-stone-800">{item.quantity}</span>
+ <span className="px-3 font-semibold font-mono text-stone-100">{item.quantity}</span>
  <button
  id={`inc-qty-${item.id}`}
  onClick={() => updateQuantity(item.id, item.quantity + 1)}
@@ -107,7 +107,7 @@ export default function CartDrawer() {
  </div>
 
  <div className="flex items-center gap-3">
- <span className="text-sm font-mono font-bold text-stone-800">{formatNaira(totalCost)}</span>
+ <span className="text-sm font-mono font-bold text-stone-100">{formatNaira(totalCost)}</span>
  <button
  id={`remove-item-${item.id}`}
  onClick={() => removeItem(item.id)}
@@ -148,13 +148,13 @@ export default function CartDrawer() {
  {items.length > 0 && (
  <div id="cart-drawer-totals" className="p-6 bg-brand-muted border-t border-brand-secondary/60 space-y-4 text-xs font-sans">
  <div className="space-y-2">
- <div className="flex justify-between text-stone-500">
+ <div className="flex justify-between text-stone-300">
  <span>Cart Subtotal</span>
- <span className="font-mono text-stone-800">{formatNaira(subtotal)}</span>
+ <span className="font-mono text-stone-100">{formatNaira(subtotal)}</span>
  </div>
- <div className="flex justify-between text-stone-500">
+ <div className="flex justify-between text-stone-300">
  <span>Shipping Location Fee</span>
- <span className="font-mono text-stone-800">{deliveryFee === 0 ? 'FREE (above ₦100k)' : formatNaira(deliveryFee)}</span>
+ <span className="font-mono text-stone-100">{deliveryFee === 0 ? 'FREE (above NGN 100k)' : formatNaira(deliveryFee)}</span>
  </div>
  <div className="border-t border-dashed border-stone-200 pt-2 flex justify-between text-sm font-bold">
  <span className="font-serif text-brand-dark">Total Order Bill</span>

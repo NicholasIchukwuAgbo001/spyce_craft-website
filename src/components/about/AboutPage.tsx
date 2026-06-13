@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { Sparkles, Heart, Award, ShieldCheck, MapPin, Feather, Compass, Check } from 'lucide-react';
 
@@ -140,7 +140,7 @@ export default function AboutPage() {
  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
  Inside the Spyce Crafts Atelier
  </h2>
- <p className="text-stone-500 max-w-xl mx-auto text-xs sm:text-sm">
+ <p className="text-stone-600 max-w-xl mx-auto text-xs sm:text-sm">
  Learn how we prevent epoxy resin discoloration, dry wedding blooms perfectly, and frame stencils with zero air pockets.
  </p>
  </div>
@@ -159,7 +159,7 @@ export default function AboutPage() {
  <h4 className="font-serif text-base font-bold text-brand-dark">
  {step.title}
  </h4>
- <p className="text-xs text-stone-500 font-sans leading-relaxed">
+ <p className="text-xs text-stone-600 font-sans leading-relaxed">
  {step.desc}
  </p>
  </div>
@@ -180,7 +180,7 @@ export default function AboutPage() {
  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
  Meet Our Artisan Collective
  </h2>
- <p className="text-stone-500 max-w-xl mx-auto text-xs sm:text-sm">
+ <p className="text-stone-600 max-w-xl mx-auto text-xs sm:text-sm">
  We are a collective of Lagos-based artists, wood smiths, and illustrators dedicated to slow, boutique luxury decor.
  </p>
  </div>
@@ -216,19 +216,19 @@ export default function AboutPage() {
  <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
  <div className="space-y-1">
  <span className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark block">15,000+</span>
- <span className="text-[10px] uppercase text-stone-400 font-sans font-bold block tracking-wider">Happy Collectors</span>
+ <span className="text-[10px] uppercase text-stone-200 font-sans font-bold block tracking-wider">Happy Collectors</span>
  </div>
  <div className="space-y-1">
  <span className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark block">36 States</span>
- <span className="text-[10px] uppercase text-stone-400 font-sans font-bold block tracking-wider">Nationwide Delivery</span>
+ <span className="text-[10px] uppercase text-stone-200 font-sans font-bold block tracking-wider">Nationwide Delivery</span>
  </div>
  <div className="space-y-1">
  <span className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark block">100% CURED</span>
- <span className="text-[10px] uppercase text-stone-400 font-sans font-bold block tracking-wider">Anti-Yellow Resin</span>
+ <span className="text-[10px] uppercase text-stone-200 font-sans font-bold block tracking-wider">Anti-Yellow Resin</span>
  </div>
  <div className="space-y-1">
  <span className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark block">380+ Litres</span>
- <span className="text-[10px] uppercase text-stone-400 font-sans font-bold block tracking-wider">Epoxy Hand-Poured</span>
+ <span className="text-[10px] uppercase text-stone-200 font-sans font-bold block tracking-wider">Epoxy Hand-Poured</span>
  </div>
  </div>
  </section>

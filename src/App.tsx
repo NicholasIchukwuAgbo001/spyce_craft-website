@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useCartStore } from './store/useCartStore';
 
 // Layout Imports
@@ -180,7 +180,7 @@ export default function App() {
  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
  Explore Curated Categories
  </h2>
- <p className="text-stone-500 font-sans max-w-xl mx-auto text-xs sm:text-sm">
+ <p className="text-stone-600 font-sans max-w-xl mx-auto text-xs sm:text-sm">
  Select your preferred handcrafted aesthetic. Clicking any card redirects you directly to the filtered catalog.
  </p>
  </div>
@@ -238,7 +238,7 @@ export default function App() {
  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
  Loved by Discerning Collectors
  </h2>
- <p className="text-stone-500 font-sans max-w-xl mx-auto text-xs sm:text-sm">
+ <p className="text-stone-600 font-sans max-w-xl mx-auto text-xs sm:text-sm">
  Read beautiful reviews of actual client shipments and custom invoice completions.
  </p>
  </div>
@@ -255,7 +255,7 @@ export default function App() {
  <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
  ))}
  </div>
- <p className="text-stone-600 text-xs sm:text-sm italic leading-relaxed font-sans font-light">
+ <p className="text-stone-300 text-xs sm:text-sm italic leading-relaxed font-sans font-light">
  "{test.review}"
  </p>
  <div className="pt-4 border-t border-brand-secondary/20 flex justify-between items-center text-xs">
@@ -277,7 +277,7 @@ export default function App() {
  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
  As Seen on TikTok &amp; Instagram
  </h2>
- <p className="text-stone-500 font-sans max-w-xl mx-auto text-xs sm:text-sm">
+ <p className="text-stone-600 font-sans max-w-xl mx-auto text-xs sm:text-sm">
  Our workspace processes, packaging stack lines, and frame design files regular clear massive organic followings.
  </p>
  </div>
@@ -399,7 +399,7 @@ export default function App() {
  <MapPin className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
  <strong className="block text-brand-dark mb-0.5">Headquarters &amp; Atelier Block</strong>
- <span className="text-stone-500 leading-relaxed block">Lagos Main Hub (Nationwide Delivery Line Available). Enugu workshop branch. Nigeria</span>
+ <span className="text-stone-600 leading-relaxed block">Lagos Main Hub (Nationwide Delivery Line Available). Enugu workshop branch. Nigeria</span>
  </div>
  </div>
 
@@ -407,7 +407,7 @@ export default function App() {
  <Phone className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
  <strong className="block text-brand-dark mb-0.5">WhatsApp hotline</strong>
- <span className="text-stone-500 block">09069996290 (International: +234 906 999 6290)</span>
+ <span className="text-stone-600 block">09069996290 (International: +234 906 999 6290)</span>
  </div>
  </div>
 
@@ -415,7 +415,7 @@ export default function App() {
  <Mail className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
  <strong className="block text-brand-dark mb-0.5">Electronic Mail</strong>
- <span className="text-stone-500 block">contact@spycecrafts.com</span>
+ <span className="text-stone-600 block">contact@spycecrafts.com</span>
  </div>
  </div>
  </div>
@@ -435,13 +435,13 @@ export default function App() {
  <div className="lg:col-span-7 bg-brand-muted p-8 sm:p-12 rounded-3xl border border-brand-secondary/40 space-y-6">
  <div className="space-y-1">
  <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-dark">Send a Message</h3>
- <p className="text-xs text-stone-500 font-sans">Our average electronic correspondence response time is under 12 hours.</p>
+ <p className="text-xs text-stone-300 font-sans">Our average electronic correspondence response time is under 12 hours.</p>
  </div>
 
  <form id="contact-form-widget" onSubmit={handleContactSubmit} className="space-y-4">
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold block tracking-wider">Your Name *</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold block tracking-wider">Your Name *</label>
  <input
  id="contact-name-input"
  type="text"
@@ -453,7 +453,7 @@ export default function App() {
  />
  </div>
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold block tracking-wider">Your Email</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold block tracking-wider">Your Email</label>
  <input
  id="contact-email-input"
  type="email"
@@ -466,7 +466,7 @@ export default function App() {
  </div>
 
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold block tracking-wider">Message Details *</label>
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold block tracking-wider">Message Details *</label>
  <textarea
  id="contact-msg-textarea"
  rows={4}

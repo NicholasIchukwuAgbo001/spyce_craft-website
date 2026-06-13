@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -174,7 +174,7 @@ export default function Footer() {
  placeholder="name@email.com"
  value={email}
  onChange={(e) => setEmail(e.target.value)}
- className="flex-1 px-4 py-2 text-stone-200 bg-brand-secondary border border-white/10 rounded-lg focus:outline-none focus:border-brand-primary text-sm font-sans"
+ className="flex-1 px-4 py-2 text-stone-200 bg-brand-secondary border border-white/10 rounded-lg focus:outline-none focus:border-brand-primary text-sm font-sans text-stone-800"
  />
  <button
  id="newsletter-submit-btn"

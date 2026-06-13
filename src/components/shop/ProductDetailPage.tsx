@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+﻿import React, { useState, useMemo } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { PRODUCTS } from '../../data/products';
 import { ShoppingBag, ArrowLeft, Star, Heart, Check, Plus, Minus, MessageSquare, ShieldAlert, Truck, Sparkles } from 'lucide-react';
@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
  }, [product]);
 
  const formatNaira = (val: number) => {
- return '₦' + val.toLocaleString('en-NG');
+ return 'NGN ' + val.toLocaleString('en-NG');
  };
 
  const handleAddToCart = () => {
@@ -186,21 +186,21 @@ export default function ProductDetailPage() {
  </span>
  </div>
  ) : (
- <span className="font-mono text-2xl font-bold text-stone-800">
+ <span className="font-mono text-2xl font-bold text-stone-100">
  {formatNaira(product.price)}
  </span>
  )}
  </div>
 
  {/* General Short Description */}
- <p className="text-stone-600 text-sm leading-relaxed font-sans">
+ <p className="text-stone-300 text-sm leading-relaxed font-sans">
  {product.description}
  </p>
 
  {/* Config: SIZES Options selection */}
  {product.sizes.length > 0 && (
  <div className="space-y-2">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">
  Select Dimension Sizing
  </label>
  <div className="flex flex-wrap gap-2">
@@ -224,7 +224,7 @@ export default function ProductDetailPage() {
  {/* Config: COLORS Options selection */}
  {product.colors.length > 0 && (
  <div className="space-y-2">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">
  Select Frame Border / Finish
  </label>
  <div className="flex flex-wrap gap-2">
@@ -248,7 +248,7 @@ export default function ProductDetailPage() {
 
  {/* Quantity Selector + Add commands */}
  <div className="space-y-4 pt-4 border-t border-stone-100">
- <label className="text-xs uppercase text-stone-400 font-sans font-bold tracking-wider block">
+ <label className="text-xs uppercase text-stone-200 font-sans font-bold tracking-wider block">
  Order Quantity
  </label>
 
@@ -298,7 +298,7 @@ export default function ProductDetailPage() {
  <div id="security-notices" className="grid grid-cols-2 gap-4 text-[11px] text-stone-500 font-sans pt-4 border-t border-stone-100">
  <div className="flex items-start gap-2">
  <Truck className="w-4 h-4 text-brand-primary shrink-0" />
- <span>Double bubble wrapped shipping. Free on orders above ₦100,000.</span>
+ <span>Double bubble wrapped shipping. Free on orders above NGN 100,000.</span>
  </div>
  <div className="flex items-start gap-2">
  <ShieldAlert className="w-4 h-4 text-brand-primary shrink-0" />
@@ -379,7 +379,7 @@ export default function ProductDetailPage() {
  </div>
  <span className="text-xs text-stone-400 font-sans">{rev.date}</span>
  </div>
- <p className="text-xs text-stone-500 leading-relaxed font-sans">{rev.comment}</p>
+ <p className="text-xs text-stone-300 leading-relaxed font-sans">{rev.comment}</p>
  </div>
  ))}
  </div>

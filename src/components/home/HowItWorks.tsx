@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Search, Compass, ShoppingBag, CheckCircle, Hammer, Truck } from 'lucide-react';
 
 export default function HowItWorks() {
@@ -83,7 +83,7 @@ export default function HowItWorks() {
  <h3 className="font-serif text-base font-bold text-brand-dark">
  {step.title}
  </h3>
- <p className="text-xs text-stone-500 leading-relaxed font-sans max-w-xs mx-auto sm:mx-0 lg:mx-auto">
+ <p className="text-xs text-stone-300 leading-relaxed font-sans max-w-xs mx-auto sm:mx-0 lg:mx-auto">
  {step.description}
  </p>
  </div>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+﻿import React, { useState, useMemo } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { PRODUCTS } from '../../data/products';
 import { Search, SlidersHorizontal, Heart, ShieldCheck, Sparkles, Star, CheckCircle, Eye, ShoppingBag, X, HelpCircle } from 'lucide-react';
@@ -135,7 +135,7 @@ export default function ShopPage() {
  };
 
  const formatNaira = (val: number) => {
- return 'â‚¦' + val.toLocaleString('en-NG');
+ return 'NGN ' + val.toLocaleString('en-NG');
  };
 
  // Determine dynamic visual badges based on tags
@@ -307,8 +307,8 @@ export default function ShopPage() {
  className="w-full accent-brand-primary cursor-pointer"
  />
  <div className="flex justify-between text-[10px] text-stone-400 font-mono">
- <span>â‚¦10,000</span>
- <span>â‚¦100,000</span>
+ <span>NGN 10,000</span>
+ <span>NGN 100,000</span>
  </div>
  </div>
 
@@ -319,8 +319,7 @@ export default function ShopPage() {
  id="filter-color-select"
  value={selectedColor}
  onChange={(e) => setSelectedColor(e.target.value)}
- className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary"
- >
+ className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary text-stone-100">
  {colors.map((c) => (
  <option key={c} value={c}>{c}</option>
  ))}
@@ -334,8 +333,7 @@ export default function ShopPage() {
  id="filter-material-select"
  value={selectedMaterial}
  onChange={(e) => setSelectedMaterial(e.target.value)}
- className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary"
- >
+ className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary text-stone-100">
  {materials.map((m) => (
  <option key={m} value={m}>{m}</option>
  ))}
@@ -349,8 +347,7 @@ export default function ShopPage() {
  id="filter-size-select"
  value={selectedSize}
  onChange={(e) => setSelectedSize(e.target.value)}
- className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary"
- >
+ className="w-full bg-white border border-stone-200 px-3 py-2 rounded-xl text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary text-stone-100">
  {sizes.map((s) => (
  <option key={s} value={s}>{s}</option>
  ))}
@@ -401,7 +398,7 @@ export default function ShopPage() {
  </div>
 
  {/* Quick Atelier Flyer */}
- <div className="p-4 rounded-xl bg-brand-secondary/35 relative overflow-hidden text-stone-800">
+ <div className="p-4 rounded-xl bg-brand-secondary/35 relative overflow-hidden text-stone-100">
  <h4 className="font-serif text-xs font-bold text-brand-dark mb-1 flex items-center gap-1">
  <Sparkles className="w-3.5 h-3.5 text-brand-primary" />
  Want bespoke sizing?
@@ -424,7 +421,7 @@ export default function ShopPage() {
 
  {/* Catalog Sorting Options Header */}
  <div className="flex flex-col sm:flex-row items-center justify-between bg-stone-50 p-4 rounded-xl border border-stone-100 gap-4">
- <p className="text-xs text-stone-500 font-sans">
+ <p className="text-xs text-stone-300 font-sans">
  Found <span className="font-bold text-brand-dark font-mono">{filteredProducts.length}</span> luxury pieces matching filters
  </p>
  <div className="flex items-center gap-2.5 w-full sm:w-auto">
@@ -436,8 +433,7 @@ export default function ShopPage() {
  setSortOption(e.target.value);
  setVisibleCount(12); // Reset count
  }}
- className="w-full sm:w-auto bg-white border border-stone-200 px-3 py-1.5 rounded-lg text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary"
- >
+ className="w-full sm:w-auto bg-white border border-stone-200 px-3 py-1.5 rounded-lg text-xs font-sans text-stone-700 focus:outline-none focus:border-brand-primary text-stone-100">
  <option value="featured">Artisan Highlights</option>
  <option value="best-selling">Best Selling</option>
  <option value="newest">New Releases</option>

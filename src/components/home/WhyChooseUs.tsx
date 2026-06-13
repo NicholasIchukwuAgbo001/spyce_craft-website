@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Heart, Sparkles, Trophy, ShieldCheck, Truck, ThumbsUp } from 'lucide-react';
 
 export default function WhyChooseUs() {
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
  <h3 className="font-serif text-lg font-bold text-brand-dark mt-6 mb-2">
  {card.title}
  </h3>
- <p className="text-sm text-stone-500 leading-relaxed font-sans">
+ <p className="text-sm text-stone-300 leading-relaxed font-sans">
  {card.description}
  </p>
  </div>

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -123,7 +123,7 @@ export default function Navbar() {
  <div className="hidden md:flex items-center gap-5 text-stone-400 shrink-0">
  <div className="flex items-center gap-1">
  <Truck className="w-3.5 h-3.5 text-brand-primary" />
- <span>Free delivery on orders above ₦100k</span>
+ <span>Free delivery on orders above NGN 100k</span>
  </div>
  </div>
 
@@ -502,7 +502,7 @@ export default function Navbar() {
  placeholder="Search..."
  value={searchText}
  onChange={(e) => setSearchText(e.target.value)}
- className="px-3 py-1.5 bg-[#121216] text-xs border border-white/10 rounded-lg text-stone-100 placeholder:text-stone-500 focus:outline-none focus:border-brand-primary w-28 sm:w-44 transition-all"
+ className="px-3 py-1.5 bg-[#121216] text-xs border border-white/10 rounded-lg text-stone-100 placeholder:text-stone-400 focus:outline-none focus:border-brand-primary w-28 sm:w-44 transition-all"
  />
  <button
  id="search-close-x-btn"

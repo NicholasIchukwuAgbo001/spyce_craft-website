@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; import { useCartStore } from '../../store/useCartStore'; import { PRODUCTS } from '../../data/products'; import {
+﻿import React, { useState } from 'react'; import { useCartStore } from '../../store/useCartStore'; import { PRODUCTS } from '../../data/products'; import {
     Sparkles,
     ArrowLeft,
     MessageSquare,
@@ -934,11 +934,11 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
                                             <div className="flex justify-between items-center border-t border-white/5 pt-2">
                                                 {prod.salePrice ? (
                                                     <div className="flex items-baseline gap-1.5">
-                                                        <span className="text-white font-bold text-sm">₦{prod.salePrice.toLocaleString()}</span>
-                                                        <span className="text-stone-500 text-xs line-through">₦{prod.price.toLocaleString()}</span>
+                                                        <span className="text-white font-bold text-sm">NGN {prod.salePrice.toLocaleString()}</span>
+                                                        <span className="text-stone-500 text-xs line-through">NGN {prod.price.toLocaleString()}</span>
                                                     </div>
                                                 ) : (
-                                                    <span className="text-white font-bold text-sm">₦{prod.price.toLocaleString()}</span>
+                                                    <span className="text-white font-bold text-sm">NGN {prod.price.toLocaleString()}</span>
                                                 )}
                                                 <span className="text-[10px] text-stone-500 uppercase">{prod.stock > 0 ? `${prod.stock} left` : 'Sold Out'}</span>
                                             </div>

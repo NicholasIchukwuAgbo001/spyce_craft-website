@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { Send, MapPin, Phone, Mail, Clock, MessageSquare, Instagram, Compass, CheckCircle } from 'lucide-react';
 import { WHATSAPP_PHONE_NUMBER, encodeWhatsAppMessage } from '../../lib/whatsapp';
@@ -76,7 +76,7 @@ export default function ContactPage() {
  <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-dark pb-2 border-b border-stone-100">
  Studio Channels
  </h3>
- <p className="text-stone-500 leading-relaxed font-light">
+ <p className="text-stone-600 leading-relaxed">
  Feel free to visit our social media feeds, check viral process videos, or reach out to our primary WhatsApp design lounge.
  </p>
  </div>
@@ -86,10 +86,10 @@ export default function ContactPage() {
  <MapPin className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
  <strong className="block text-brand-dark mb-0.5">Physical Atelier Locations</strong>
- <span className="text-stone-500 leading-relaxed block">
+ <span className="text-stone-600 leading-relaxed block">
  • Lagos Headquarters: 12B, Admiralty Hub Way, Lekki Phase 1, Lagos State, Nigeria.
  </span>
- <span className="text-stone-500 leading-relaxed block">
+ <span className="text-stone-600 leading-relaxed block">
  • Enugu Production Annex: Ogui Link Lane Block, Enugu State, Nigeria.
  </span>
  </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
  <Phone className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
  <strong className="block text-brand-dark mb-0.5">WhatsApp Designer Chat</strong>
- <span className="text-stone-500 block">
+ <span className="text-stone-600 block">
  09069996290 (International: +234 906 999 6290)
  </span>
  </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
  <Mail className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
  <strong className="block text-brand-dark mb-0.5">Electronic Inquiries</strong>
- <span className="text-stone-500 block">contact@spycecrafts.com</span>
+ <span className="text-stone-600 block">contact@spycecrafts.com</span>
  <span className="text-brand-primary block font-light text-[11px] mt-0.5">Support Ticket Queue: average 6-hour reply</span>
  </div>
  </div>
@@ -118,7 +118,7 @@ export default function ContactPage() {
  <Clock className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
  <strong className="block text-brand-dark mb-0.5">Atelier Crafting Hours</strong>
- <span className="text-stone-500 block">Monday to Friday: 9:00 AM – 6:00 PM (WAT)</span>
+ <span className="text-stone-600 block">Monday to Friday: 9:00 AM – 6:00 PM (WAT)</span>
  <span className="text-stone-500 block font-light">Saturday Curing Shifts: 10:00 AM – 3:00 PM (No phone pickups)</span>
  </div>
  </div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
  <form id="detailed-contact-form" onSubmit={handleSubmit} className="space-y-4">
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-bold tracking-wider">Your Full Name *</label>
+ <label className="text-xs uppercase text-stone-200 font-bold tracking-wider">Your Full Name *</label>
  <input
  id="detailed-contact-name"
  type="text"
@@ -161,7 +161,7 @@ export default function ContactPage() {
  />
  </div>
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-bold tracking-wider">Your Email</label>
+ <label className="text-xs uppercase text-stone-200 font-bold tracking-wider">Your Email</label>
  <input
  id="detailed-contact-email"
  type="email"
@@ -175,7 +175,7 @@ export default function ContactPage() {
 
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-bold tracking-wider">Phone Number (WhatsApp Active)</label>
+ <label className="text-xs uppercase text-stone-200 font-bold tracking-wider">Phone Number (WhatsApp Active)</label>
  <input
  id="detailed-contact-phone"
  type="text"
@@ -186,7 +186,7 @@ export default function ContactPage() {
  />
  </div>
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-bold tracking-wider">Inquiry Theme *</label>
+ <label className="text-xs uppercase text-stone-200 font-bold tracking-wider">Inquiry Theme *</label>
  <select
  id="detailed-contact-theme"
  value={subject}
@@ -203,7 +203,7 @@ export default function ContactPage() {
  </div>
 
  <div className="space-y-1.5">
- <label className="text-xs uppercase text-stone-400 font-bold tracking-wider">Craft Request Details *</label>
+ <label className="text-xs uppercase text-stone-200 font-bold tracking-wider">Craft Request Details *</label>
  <textarea
  id="detailed-contact-details"
  rows={5}

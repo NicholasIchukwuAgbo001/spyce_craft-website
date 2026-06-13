@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { Eye, ArrowRight, X, Heart, Sparkles, MessageSquare } from 'lucide-react';
 
@@ -217,7 +217,7 @@ export default function PortfolioGallery() {
  </button>
 
  <div
- className="bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl scale-95 duration-500 inline-grid grid-cols-1 md:grid-cols-2 text-stone-800"
+ className="bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl scale-95 duration-500 inline-grid grid-cols-1 md:grid-cols-2 text-stone-100"
  onClick={(e) => e.stopPropagation()}
  >
  {/* Product Gallery Image inside Lightbox */}
@@ -239,13 +239,13 @@ export default function PortfolioGallery() {
  <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-brand-dark">
  {lightboxItem.title}
  </h3>
- <p className="text-sm text-stone-500 leading-relaxed font-sans">
+ <p className="text-sm text-stone-300 leading-relaxed font-sans">
  This exquisite item represents true, slow-crafted artistry. Hand-built using organic crystals, highly detailed digital sketching, and high-gloss multi-layer UV protected polymers to assure a brilliant look for generations.
  </p>
 
  <div className="border-t border-stone-100 pt-4 space-y-2">
  <span className="block text-xs uppercase text-stone-400 font-sans tracking-widest">Pricing Estimate</span>
- <p className="font-serif text-xl font-bold text-brand-primary">From ₦18,500 - ₦45,000</p>
+ <p className="font-serif text-xl font-bold text-brand-primary">From NGN 18,500 - NGN 45,000</p>
  <span className="text-[11px] text-stone-400 font-sans italic">Definitive pricing is contingent on frame dimensions selected.</span>
  </div>
  </div>

@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+﻿import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { CartItem, Product, CustomizationData } from '../types';
 
@@ -112,7 +112,7 @@ export const useCartStore = create<CartState>()(
       getDeliveryFee: () => {
         const subtotal = get().getCartSubtotal();
         if (subtotal === 0) return 0;
-        return subtotal > 100000 ? 0 : 3500; // Free shipping above ₦100k
+        return subtotal > 100000 ? 0 : 3500; // Free shipping above NGN 100k
       },
       getCartTotal: () => {
         return get().getCartSubtotal() + get().getDeliveryFee();

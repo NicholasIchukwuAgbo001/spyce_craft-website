@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+﻿import React, { useState, useMemo } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { BLOGS } from '../../data/blogs';
 import { ArrowLeft, Clock, Calendar, User, Search, Sparkles, MessageSquare, Tag, Eye } from 'lucide-react';
@@ -43,7 +43,7 @@ export default function BlogView() {
  }, [selectedBlogSlug]);
 
  return (
- <main id="blog-atelier-view" className="py-12 bg-white min-h-screen text-stone-800 font-sans">
+ <main id="blog-atelier-view" className="py-12 bg-white min-h-screen text-stone-100 font-sans">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
  {activePost ? (
@@ -138,7 +138,7 @@ export default function BlogView() {
  <div className="p-6 sm:p-8 rounded-2xl bg-brand-secondary/20 border border-brand-primary/10 grid grid-cols-1 sm:grid-cols-4 gap-6 items-center">
  <div className="sm:col-span-3 space-y-2 text-center sm:text-left">
  <h4 className="font-serif text-lg font-bold text-brand-dark">Inspired by this read?</h4>
- <p className="text-xs text-stone-500 font-sans leading-relaxed">
+ <p className="text-xs text-stone-300 font-sans leading-relaxed">
  Discuss wood finishes, gold-laced resin waves, or floral drying parameters directly with our lead specialist inside our active WhatsApp chat workshop!
  </p>
  </div>
@@ -167,7 +167,7 @@ export default function BlogView() {
  <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-dark">
  Atelier Inspiration &amp; <span className="text-brand-primary font-normal italic">Styling Guide</span>
  </h1>
- <p className="font-sans text-stone-500 max-w-xl mx-auto text-sm">
+ <p className="font-sans text-stone-300 max-w-xl mx-auto text-sm">
  Secrets of epoxy resin lacing, wedding keepsake preservation, minimalist quote pairings, and aesthetic master bedroom layouts.
  </p>
  </div>
@@ -243,7 +243,7 @@ export default function BlogView() {
  <h3 className="font-serif text-lg font-bold text-brand-dark line-clamp-2 leading-snug group-hover:text-brand-primary transition-colors">
  {post.title}
  </h3>
- <p className="text-stone-500 text-xs leading-relaxed line-clamp-3 font-light font-sans">
+ <p className="text-stone-300 text-xs leading-relaxed line-clamp-3 font-light font-sans">
  {post.excerpt}
  </p>
  </div>
