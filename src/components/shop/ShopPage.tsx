@@ -221,7 +221,7 @@ export default function ShopPage() {
                     <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-brand-dark">
                         Our Handcrafted <span className="text-brand-primary font-normal italic">Collections</span>
                     </h1>
-                    <p className="font-sans text-stone-300 max-w-xl mx-auto text-xs sm:text-sm">
+                    <p className="font-sans text-stone-700 max-w-xl mx-auto text-xs sm:text-sm">
                         Explore 100+ Pinterest-inspired quote blocks, bespoke family silhouettes, and anti-yellowing high-gloss coasters made with slow-run excellence.
                     </p>
                 </div>
@@ -269,7 +269,6 @@ export default function ShopPage() {
                             </div>
                         </div>
 
-                        {/* On mobile only render filters when open — prevents compositor layer from being created on initial paint */}
                         <div className={`${sidebarOpen ? 'block' : 'hidden'} lg:block space-y-4`}>
 
                             {/* Keyword Search */}
@@ -386,7 +385,6 @@ export default function ShopPage() {
                                 </div>
                             </div>
 
-                            {/* Toggles (Stock & Customization) */}
                             <div className="space-y-2 pt-2 border-t border-brand-secondary/40 font-sans text-xs">
                                 <label className="flex items-center gap-2 cursor-pointer select-none text-stone-700 font-medium">
                                     <input
@@ -409,7 +407,6 @@ export default function ShopPage() {
                                 </label>
                             </div>
 
-                            {/* Quick Atelier Flyer */}
                             <div className="p-4 rounded-xl bg-brand-secondary/35 relative overflow-hidden text-stone-100">
                                 <h4 className="font-serif text-xs font-bold text-white mb-1 flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-brand-primary" />
@@ -426,13 +423,11 @@ export default function ShopPage() {
                                     Contact Us
                                 </button>
                             </div>
-                        </div>{/* end collapsible filter content */}
-                    </div>{/* end shop-filters-sidebar */}
+                        </div>
+                    </div>
 
-                    {/* Right Side Products list Column */}
                     <div id="shop-catalog-section" className="lg:col-span-3 space-y-6">
 
-                        {/* Catalog Sorting Options Header */}
                         <div className="flex flex-col sm:flex-row items-center justify-between bg-stone-50 p-4 rounded-xl border border-stone-100 gap-4">
                             <p className="text-xs text-stone-500 font-sans">
                                 Found <span className="font-bold text-stone-800 font-mono">{filteredProducts.length}</span> luxury pieces matching filters
@@ -458,9 +453,8 @@ export default function ShopPage() {
                             </div>
                         </div>
 
-                        {/* Products grid - Mobile 2 Column, Tablet 3 Column, Desktop 4 Column */}
                         {paginatedProducts.length > 0 ? (
-                            <div id="catalog-products-grid" className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 bg-stone-50">
+                            <div id="catalog-products-grid" className="grid grid-cols-1 lg:grid-cols-3 gap-4 bg-stone-50">
                                 {paginatedProducts.map((product, productIndex) => {
                                     const actualPrice = product.salePrice ?? product.price;
                                     const isSaved = wishlist.some((w) => w.id === product.id);
@@ -477,9 +471,8 @@ export default function ShopPage() {
                                             onMouseLeave={() => setHoveredCardId(null)}
                                             className="group bg-white rounded-b-2xl border border-stone-200 shadow-sm cursor-pointer flex flex-col justify-between"
                                         >
-                                            {/* Visual area — contain image within bounds, no GPU layer promotion */}
+
                                             <div className="relative aspect-square bg-stone-100 overflow-hidden rounded-t-2xl">
-                                                {/* Single image, swap src on hover — avoids stacking two absolute layers */}
                                                 <img
                                                     src={isHovered && product.images[1] ? product.images[1] : product.images[0]}
                                                     alt={product.name}
@@ -489,14 +482,12 @@ export default function ShopPage() {
                                                     decoding={isAboveFold ? 'sync' : 'async'}
                                                 />
 
-                                                {/* Custom label badges */}
                                                 {badge && (
                                                     <span className={`absolute top-2.5 left-2.5 text-[8px] sm:text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full z-10 ${badge.style}`}>
                                                         {badge.text}
                                                     </span>
                                                 )}
 
-                                                {/* Fast Wishlist button over image */}
                                                 <button
                                                     id={`card-wishlist-${product.id}`}
                                                     onClick={(e) => handleWhiskeyToggle(product, e)}
@@ -506,7 +497,6 @@ export default function ShopPage() {
                                                     <Heart className={`w-4 h-4 ${isSaved ? 'text-red-500 fill-red-500' : ''}`} />
                                                 </button>
 
-                                                {/* Hover Quick view - hidden on mobile, visible on desktop hover */}
                                                 <div className="absolute inset-0 hidden group-hover:lg:flex items-end justify-center pb-3">
                                                     <button
                                                         id={`quick-add-btn-${product.id}`}
@@ -620,7 +610,6 @@ export default function ShopPage() {
                             </div>
                         )}
 
-                        {/* Load More Button pagination */}
                         {filteredProducts.length > visibleCount && (
                             <div id="shop-pagination-block" className="text-center pt-8 border-t border-stone-100">
                                 <button
