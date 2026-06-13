@@ -66,7 +66,6 @@ export default function ShopPage() {
       result = result.filter((p) => p.colors.some((c) => c.toLowerCase().includes(selectedColor.toLowerCase())));
     }
 
-    // 5. Material keywords matching description/tags
     if (selectedMaterial !== 'All') {
       const mat = selectedMaterial.toLowerCase();
       result = result.filter(

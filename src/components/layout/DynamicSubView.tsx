@@ -1197,7 +1197,7 @@ GRID TEMPLATE 3: CUSTOM BRIEFS & COMMISSION REQUESTS
                         </button>
                         {formSuccess && (
                             <p className="text-center text-xs text-emerald-400 font-bold animate-pulse">
-                                WhatsApp is opening — tap Send to submit your brief.
+                                Dynamic brief compiles successfully! Redirecting and opening WhatsApp...
                             </p>
                         )}
                     </form>
