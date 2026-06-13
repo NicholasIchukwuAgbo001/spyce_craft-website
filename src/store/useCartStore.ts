@@ -64,7 +64,7 @@ export const useCartStore = create<CartState>()(
           selectedBlogSlug: view === 'blog-detail' ? slug : get().selectedBlogSlug,
           activeSubTopic: subTopic || (view === 'dynamic-subview' ? get().activeSubTopic : null),
         });
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'instant' });
       },
       addItem: (product, quantity, size, color, customization) => {
         const itemUniqueId = customization
