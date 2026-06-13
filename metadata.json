@@ -1,0 +1,6 @@
+{
+  "name": "Spyce Crafts",
+  "description": "Premium handcrafted resin art, acrylic custom frames, and personalized gifts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
