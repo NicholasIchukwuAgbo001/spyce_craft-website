@@ -469,17 +469,17 @@ export default function ShopPage() {
                                                 <img
                                                     src={product.images[0]}
                                                     alt={product.name}
-                                                    className={`absolute inset-0 w-full h-full object-cover ${isHovered && product.images[1] ? 'opacity-0' : 'opacity-100'}`}
+                                                    className={`absolute inset-0 w-full h-full object-cover`}
                                                     referrerPolicy="no-referrer"
                                                     loading={isAboveFold ? 'eager' : 'lazy'}
                                                     decoding={isAboveFold ? 'sync' : 'async'}
                                                 />
-                                                {product.images[1] && (
+                                                {product.images[1] && isHovered && (
                                                     <img
                                                         src={product.images[1]}
                                                         alt=""
                                                         aria-hidden="true"
-                                                        className={`absolute inset-0 w-full h-full object-cover ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+                                                        className="absolute inset-0 w-full h-full object-cover"
                                                         referrerPolicy="no-referrer"
                                                         loading="lazy"
                                                         decoding="async"
@@ -497,14 +497,14 @@ export default function ShopPage() {
                                                 <button
                                                     id={`card-wishlist-${product.id}`}
                                                     onClick={(e) => handleWhiskeyToggle(product, e)}
-                                                    className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/90 shadow flex items-center justify-center text-stone-500 hover:text-red-500 z-10"
+                                                    className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white shadow flex items-center justify-center text-stone-500 hover:text-red-500 z-10"
                                                     title="Save to Wishlist"
                                                 >
                                                     <Heart className={`w-4 h-4 ${isSaved ? 'text-red-500 fill-red-500' : ''}`} />
                                                 </button>
 
                                                 {/* Hover Quick view - hidden on mobile, visible on desktop hover */}
-                                                <div className="absolute inset-0 bg-black/10 hidden group-hover:flex items-end justify-center pb-3">
+                                                <div className="absolute inset-0 hidden group-hover:lg:flex items-end justify-center pb-3">
                                                     <button
                                                         id={`quick-add-btn-${product.id}`}
                                                         onClick={(e) => handleQuickViewOpen(product, e)}

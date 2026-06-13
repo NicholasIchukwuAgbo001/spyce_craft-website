@@ -127,7 +127,7 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                <header id="main-navigation-header" className="relative w-full transition-all duration-300 bg-brand-secondary/95 backdrop-blur-sm border-b border-white/5">
+                <header id="main-navigation-header" className="relative w-full bg-brand-secondary border-b border-white/5">
                     <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
                         <div className="flex items-center justify-between h-16 sm:h-20 gap-2">
 
@@ -832,18 +832,16 @@ export default function Navbar() {
                 href="https://wa.me/2349069996290?text=Hello%20Spyce%20Crafts%20Lagos,%20I%20am%20interested%20in%20customized%20resins%20or%20frames!"
                 target="_blank"
                 rel="noreferrer"
-                className="fixed bottom-20 md:bottom-8 right-6 z-50 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group border border-emerald-500/30"
+                className="fixed bottom-20 md:bottom-8 right-6 z-50 w-14 h-14 rounded-full bg-emerald-600 shadow-xl flex items-center justify-center group border border-emerald-500/30"
                 aria-label="Direct Telegram or WhatsApp Designer Chat"
             >
-                {/* Glow pulsing wave */}
-                <span className="absolute inset-0 rounded-full bg-emerald-500/20 group-hover:scale-125 transition-transform " />
                 <MessageSquare className="w-6 h-6 text-white" />
             </a>
 
             {/* 5. MOBILE BOTTOM NAVIGATION STRIP (Fixed to screen bottom viewport) */}
             <nav
                 id="mobile-bottom-navigation-strip"
-                className="lg:hidden fixed bottom-0 left-0 w-full bg-brand-secondary/95 border-t border-white/5 z-50 flex items-center justify-around py-3.5 px-2 "
+                className="lg:hidden fixed bottom-0 left-0 w-full bg-brand-secondary border-t border-white/10 z-50 flex items-center justify-around py-3.5 px-2"
             >
                 {[
                     { label: 'Home', view: 'home' as const, icon: <span className="text-lg">🏠</span> },
