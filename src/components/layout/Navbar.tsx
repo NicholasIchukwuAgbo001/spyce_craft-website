@@ -103,7 +103,6 @@ export default function Navbar() {
 
     return (
         <>
-            {/* Fixed wrapper keeps utility bar + main header together as one fixed block */}
             <div className="fixed top-0 left-0 right-0 z-50 w-full">
 
                 {/* 1. Header Utility Bar */}

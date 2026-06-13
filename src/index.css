@@ -65,8 +65,11 @@ textarea::placeholder {
     filter: none !important;
   }
   [class*="transition-all"],
-  [class*="transition-transform"] {
+  [class*="transition-transform"],
+  [class*="transition-shadow"],
+  [class*="hover:shadow"] {
     transition: none !important;
+    box-shadow: none !important;
   }
   .animate-pulse, .animate-spin, .animate-bounce,
   .animate-ping, .animate-fadeIn, .animate-slideIn {

@@ -176,10 +176,10 @@ export default function App() {
 
                                 <div className="text-center space-y-3 mb-16">
                                     <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Artisan Catalogue</span>
-                                    <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
+                                    <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
                                         Explore Curated Categories
                                     </h2>
-                                    <p className="text-stone-300 font-sans max-w-xl mx-auto text-xs sm:text-sm">
+                                    <p className="text-stone-500 font-sans max-w-xl mx-auto text-xs sm:text-sm">
                                         Select your preferred handcrafted aesthetic. Clicking any card redirects you directly to the filtered catalog.
                                     </p>
                                 </div>
