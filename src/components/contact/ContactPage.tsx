@@ -215,19 +215,24 @@ export default function ContactPage() {
                 />
               </div>
 
+              <div className="flex items-center gap-2 text-[10px] text-stone-400 font-sans pt-1">
+                <MessageSquare className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <span>Submitting will open <strong className="text-emerald-400">WhatsApp</strong> with your brief pre-filled — no account needed.</span>
+              </div>
+
               <button
                 id="detailed-contact-submit-btn"
                 type="submit"
-                className="w-full py-4 bg-brand-dark hover:bg-brand-primary text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                className="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-emerald-900/30 cursor-pointer"
               >
-                <Send className="w-4 h-4 text-brand-secondary" />
-                <span>Transmit Design Brief</span>
+                <MessageSquare className="w-4 h-4" />
+                <span>Send via WhatsApp</span>
               </button>
 
               {submitted && (
-                <div id="detailed-contact-response" className="p-4 rounded-xl bg-emerald-50 text-emerald-800 text-xs flex items-center gap-2 font-medium animate-fadeIn">
-                  <CheckCircle className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
-                  <span>Brief securely loaded! Our lead design artisan will contact you via WhatsApp or email with initial mockups soon. ✨</span>
+                <div id="detailed-contact-response" className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/20 text-xs flex items-start gap-2 font-medium animate-fadeIn">
+                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="text-emerald-200">WhatsApp is opening with your brief pre-filled. Just tap <strong>Send</strong> in the chat to submit your inquiry. ✨</span>
                 </div>
               )}
             </form>

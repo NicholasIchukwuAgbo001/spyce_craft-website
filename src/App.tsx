@@ -481,15 +481,15 @@ export default function App() {
                       <button
                         id="contact-submit-btn"
                         type="submit"
-                        className="w-full py-3.5 bg-brand-dark hover:bg-brand-primary text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors duration-300 flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                        className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 shadow-md cursor-pointer"
                       >
-                        <Send className="w-4 h-4 text-brand-secondary" />
-                        <span>Send Message</span>
+                        <MessageSquare className="w-4 h-4" />
+                        <span>Send via WhatsApp</span>
                       </button>
 
                       {contactSuccess && (
-                        <p id="contact-success-response" className="text-xs text-emerald-600 font-medium text-center animate-pulse">
-                          Message sent! Our artisans will review your specifics and follow back over email soon. ✨
+                        <p id="contact-success-response" className="text-xs text-emerald-400 font-medium text-center animate-pulse">
+                          WhatsApp is opening — just tap <strong>Send</strong> in the chat to submit. ✨
                         </p>
                       )}
                     </form>
