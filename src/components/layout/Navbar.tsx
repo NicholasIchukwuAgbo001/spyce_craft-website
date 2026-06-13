@@ -108,19 +108,19 @@ export default function Navbar() {
 
   return (
     <>
-      {/* 1. Header Utility Bar: Elegant Dark Sleek Announcement Ticker */}
-      <div id="header-utility-bar" className="bg-[#121215] text-[11px] sm:text-xs text-stone-300 font-sans tracking-wide border-b border-white/5 py-2.5 px-4 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      {/* 1. Header Utility Bar */}
+      <div id="header-utility-bar" className="bg-[#121215] text-[11px] text-stone-300 font-sans tracking-wide border-b border-white/5 py-2 px-4 sticky top-0 z-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex items-center justify-center sm:justify-between gap-2">
 
-          {/* Static announcements or rotational element with nice transitions */}
-          <div className="flex items-center gap-2 overflow-hidden h-5">
-            <span className="font-semibold text-brand-primary flex items-center gap-1.5 animate-pulse">
+          {/* Announcement ticker */}
+          <div className="flex items-center gap-2 overflow-hidden max-w-full">
+            <span className="font-semibold text-brand-primary truncate animate-pulse text-center sm:text-left">
               {announcements[currentAnnouncementIdx].text}
             </span>
           </div>
 
-          {/* Quick links side */}
-          <div className="hidden md:flex items-center gap-5 text-stone-400">
+          {/* Quick links side — desktop only */}
+          <div className="hidden md:flex items-center gap-5 text-stone-400 shrink-0">
             <div className="flex items-center gap-1">
               <Truck className="w-3.5 h-3.5 text-brand-primary" />
               <span>Free delivery on orders above ₦100k</span>
@@ -130,25 +130,24 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 2. Primary Layout Sticky Header */}
-      <header id="main-navigation-header" className="sticky top-[38px] sm:top-[38px] md:top-[38px] z-40 w-full transition-all duration-300 bg-brand-secondary/90 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+      <header id="main-navigation-header" className="sticky top-[34px] z-40 w-full transition-all duration-300 bg-brand-secondary/90 backdrop-blur-xl border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-20 gap-2 overflow-hidden">
 
             {/* BRAND LOGO */}
             <div
               id="brand-logo-container"
-              className="flex items-center gap-3 cursor-pointer group shrink-0"
+              className="flex items-center gap-2 sm:gap-3 cursor-pointer group shrink-0 min-w-0"
               onClick={() => navigateTo('home')}
             >
-              <div className="w-10.5 h-10.5 rounded-full bg-brand-primary flex items-center justify-center text-brand-secondary shadow-lg group-hover:scale-105 transition-transform duration-300">
-                <Sparkles className="w-5.5 h-5.5 animate-pulse" />
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-primary flex items-center justify-center text-brand-secondary shadow-lg group-hover:scale-105 transition-transform duration-300 shrink-0">
+                <Sparkles className="w-4.5 h-4.5 sm:w-5 sm:h-5 animate-pulse" />
               </div>
-              <div>
-                <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-brand-primary transition-colors duration-300">
+              <div className="min-w-0">
+                <span className="font-serif text-base sm:text-xl lg:text-2xl font-bold tracking-tight text-white group-hover:text-brand-primary transition-colors duration-300 block truncate">
                   Spyce Crafts
                 </span>
-                <span className="block text-[9px] tracking-widest uppercase font-sans text-stone-400">
+                <span className="block text-[8px] sm:text-[9px] tracking-widest uppercase font-sans text-stone-400 truncate">
                   Resin &amp; Frame Atelier
                 </span>
               </div>
@@ -490,28 +489,25 @@ export default function Navbar() {
 
             </nav>
 
-            {/* UTILITIES BAR - Desktop Cart, Wish, Direct WhatsApp */}
-            <div id="nav-utilities" className="flex items-center gap-3">
+            {/* UTILITIES BAR */}
+            <div id="nav-utilities" className="flex items-center gap-1 sm:gap-3 shrink-0">
 
-              {/* Quick Lens Search bar */}
+              {/* Search */}
               <div className="relative flex items-center">
                 {searchOpen ? (
                   <form id="navbar-search-inline" onSubmit={handleSearchSubmit} className="flex items-center animate-fadeIn">
                     <input
                       ref={searchInputRef}
                       type="text"
-                      placeholder="Search resins or frames..."
+                      placeholder="Search..."
                       value={searchText}
                       onChange={(e) => setSearchText(e.target.value)}
-                      className="px-3 py-1.5 bg-[#121216] text-xs border border-white/10 rounded-lg text-stone-100 placeholder:text-stone-500 focus:outline-none focus:border-brand-primary w-36 sm:w-44 transition-all"
+                      className="px-3 py-1.5 bg-[#121216] text-xs border border-white/10 rounded-lg text-stone-100 placeholder:text-stone-500 focus:outline-none focus:border-brand-primary w-28 sm:w-44 transition-all"
                     />
                     <button
                       id="search-close-x-btn"
                       type="button"
-                      onClick={() => {
-                        setSearchOpen(false);
-                        setSearchText('');
-                      }}
+                      onClick={() => { setSearchOpen(false); setSearchText(''); }}
                       className="p-1 text-stone-400 hover:text-stone-100 ml-1 cursor-pointer"
                     >
                       <X className="w-4 h-4" />
@@ -521,10 +517,10 @@ export default function Navbar() {
                   <button
                     id="search-trigger-lens"
                     onClick={() => setSearchOpen(true)}
-                    className="p-2 rounded-full hover:bg-white/5 text-stone-200 transition-all cursor-pointer"
+                    className="p-1.5 sm:p-2 rounded-full hover:bg-white/5 text-stone-200 transition-all cursor-pointer"
                     aria-label="Search items"
                   >
-                    <Search className="w-5 h-5 opacity-80" />
+                    <Search className="w-4.5 h-4.5 opacity-80" />
                   </button>
                 )}
               </div>
@@ -533,12 +529,12 @@ export default function Navbar() {
               <button
                 _id="navbar-wishlist-icon"
                 onClick={() => navigateTo('wishlist')}
-                className="relative p-2 rounded-full hover:bg-white/5 text-stone-200 transition-all cursor-pointer"
+                className="relative p-1.5 sm:p-2 rounded-full hover:bg-white/5 text-stone-200 transition-all cursor-pointer"
                 aria-label="My Wishlist"
               >
-                <Heart className={`w-5 h-5 opacity-80 ${wishlistCount > 0 ? 'text-red-500 fill-red-500' : ''}`} />
+                <Heart className={`w-4.5 h-4.5 opacity-80 ${wishlistCount > 0 ? 'text-red-500 fill-red-500' : ''}`} />
                 {wishlistCount > 0 && (
-                  <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 text-white text-[8px] font-bold flex items-center justify-center rounded-full">
+                  <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-red-500 text-white text-[7px] font-bold flex items-center justify-center rounded-full">
                     {wishlistCount}
                   </span>
                 )}
@@ -548,12 +544,12 @@ export default function Navbar() {
               <button
                 id="navbar-cart-icon"
                 onClick={() => navigateTo('cart')}
-                className="relative p-2 rounded-full hover:bg-white/5 text-stone-200 transition-all cursor-pointer"
+                className="relative p-1.5 sm:p-2 rounded-full hover:bg-white/5 text-stone-200 transition-all cursor-pointer"
                 aria-label="Items inside cart"
               >
-                <ShoppingBag className="w-5 h-5 opacity-80" />
+                <ShoppingBag className="w-4.5 h-4.5 opacity-80" />
                 {cartCount > 0 && (
-                  <span className="absolute top-0 right-0 w-4 h-4 bg-brand-primary text-stone-950 text-[8px] font-bold flex items-center justify-center rounded-full animate-bounce">
+                  <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-brand-primary text-stone-950 text-[7px] font-bold flex items-center justify-center rounded-full animate-bounce">
                     {cartCount}
                   </span>
                 )}
@@ -575,10 +571,10 @@ export default function Navbar() {
               <button
                 id="mobile-drawer-toggle"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 -mr-2 text-white hover:text-brand-primary lg:hidden transition-colors cursor-pointer"
+                className="p-1.5 text-white hover:text-brand-primary lg:hidden transition-colors cursor-pointer"
                 aria-label="Toggle Navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
 
             </div>
@@ -589,7 +585,7 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div
             id="mobile-drawer-overlay"
-            className="lg:hidden fixed top-[116px] sm:top-[116px] left-0 w-full h-[calc(100vh-172px)] bg-brand-secondary border-t border-white/5 z-55 overflow-y-auto px-6 py-6 animate-fadeIn pb-24"
+            className="lg:hidden fixed top-[98px] sm:top-[108px] left-0 w-full h-[calc(100vh-98px)] sm:h-[calc(100vh-108px)] bg-brand-secondary border-t border-white/5 z-40 overflow-y-auto px-4 sm:px-6 py-4 animate-fadeIn pb-24"
           >
             <div className="flex flex-col gap-2 font-sans">
 
