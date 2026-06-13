@@ -59,9 +59,9 @@ import React, { useState } from 'react'; import { useCartStore } from '../../sto
  setSuccessToast(`Added "${product.name}" to your shopping cart!`);
  setTimeout(() => setSuccessToast(null), 3000);
  };
- // ────────────────────────────────────────────────────────
+ // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  // DATA DICTIONARY FOR SUBVIEWS
- // ────────────────────────────────────────────────────────
+ // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  // Core metadata helper for headers & descriptions
  const getTopicMetadata = (topic: string) => {
  switch (topic) {
@@ -529,7 +529,7 @@ import React, { useState } from 'react'; import { useCartStore } from '../../sto
  case 'Gift Ideas':
  return {
  title: 'The ultimate bespoke Gift pairings guidebook',
- subtitle: 'Find out why dried-floral hexagons and custom portrait line art represent Nigeria’s top-trending gifts.',
+ subtitle: 'Find out why dried-floral hexagons and custom portrait line art represent Nigeriaâ€™s top-trending gifts.',
  accent: 'MILESTONE MOMENTS',
  bgColor: 'bg-amber-950/10',
  image: '/assets/150636.jpg'
@@ -578,7 +578,7 @@ import React, { useState } from 'react'; import { useCartStore } from '../../sto
  case 'Our Story':
  return {
  title: 'Spyce Crafts: Lagos-to-Nationwide',
- subtitle: 'How an unwavering fixation with lento polymer layers and Pinterest aesthetics built Nigeria’s foremost resin brand.',
+ subtitle: 'How an unwavering fixation with lento polymer layers and Pinterest aesthetics built Nigeriaâ€™s foremost resin brand.',
  accent: 'HOW WE EMBARKED',
  bgColor: 'bg-stone-50',
  image: '/assets/150642.jpg'
@@ -586,14 +586,14 @@ import React, { useState } from 'react'; import { useCartStore } from '../../sto
  case 'Mission & Vision':
  return {
  title: 'Our Craft Values: Crystalline Perfection',
- subtitle: 'Empowering domestic physical artisans, ensuring crystal clarity, and memorializing life’s sweet memories.',
+ subtitle: 'Empowering domestic physical artisans, ensuring crystal clarity, and memorializing lifeâ€™s sweet memories.',
  accent: 'THE SPYCE CODE',
  bgColor: 'bg-stone-950',
  image: '/assets/150643.jpg'
  };
  case 'Craftsmanship Process':
  return {
- title: 'How It’s Made: Behind our Slow Layer Cures',
+ title: 'How Itâ€™s Made: Behind our Slow Layer Cures',
  subtitle: 'An aesthetic deep dive into our meticulous sand-sanding, heat micro-torch flame treatments, and acrylic backing.',
  accent: '24-HOUR CURE TIMELINES',
  bgColor: 'bg-brand-primary/10',
@@ -826,7 +826,7 @@ import React, { useState } from 'react'; import { useCartStore } from '../../sto
  <div className="lg:col-span-7 p-8 sm:p-14 flex flex-col justify-between space-y-8 text-left">
  <div className="space-y-4">
  <span className="text-[10px] sm:text-xs text-brand-primary tracking-[0.25em] uppercase font-bold block">
- ✦ {meta.accent} ✦
+ âœ¦ {meta.accent} âœ¦
  </span>
  <h1 className="font-serif text-3xl sm:text-5xl font-black text-white leading-tight tracking-tight">
  {meta.title}
@@ -856,22 +856,22 @@ import React, { useState } from 'react'; import { useCartStore } from '../../sto
  <img
  src={meta.image}
  alt={meta.title}
- className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 contrast-125"
+ className="absolute inset-0 w-full h-full object-cover opacity-90"
  />
  <div className="absolute inset-0 bg-linear-to-r lg:bg-linear-to-t from-brand-secondary via-brand-secondary/40 to-transparent" />
  <div className="absolute bottom-6 right-6 p-4 rounded-2xl bg-brand-secondary/80 border border-white/5 text-right">
  <span className="block text-[8px] tracking-widest uppercase text-stone-500 font-medium">Atelier Catalog Status</span>
  <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wide flex items-center gap-1.5 justify-end">
- <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+ <span className="w-2 h-2 rounded-full bg-emerald-500" />
  Active Casting Slot: open
  </span>
  </div>
  </div>
  </div>
  </section>
- {/* ────────────────────────────────────────────────────────
+ {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
-──────────────────────────────────────────────────────── */}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
  {(group === 'shop' || group === 'collections') && (
  <section className="max-w-7xl mx-auto space-y-16">
  <div className="flex flex-col md:flex-row items-start md:items-end justify-between border-b border-white/5 pb-6 gap-4">
@@ -900,13 +900,13 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
  <div
  id={`subview-item-${prod.id}`}
  key={prod.id}
- className="rounded-2xl overflow-hidden bg-brand-secondary/60 border border-white/5 flex flex-col justify-between group hover:border-brand-primary/30 transition-all duration-300"
+ className="rounded-2xl overflow-hidden bg-brand-secondary/60 border border-white/5 flex flex-col justify-between group hover:border-brand-primary/30 transition-colors"
  >
  <div className="relative aspect-square overflow-hidden bg-stone-900">
  <img
  src={prod.images[0]}
  alt={prod.name}
- className="w-full h-full object-cover transition-transform duration-500"
+ className="w-full h-full object-cover"
  />
  {/* Discount or tag badge */}
  {prod.salePrice ? (
@@ -927,7 +927,7 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
  {prod.customizable && (
  <div className="absolute bottom-4 left-4 right-4 text-center">
  <span className="inline-block bg-black/65 text-brand-primary text-[9.5px] font-semibold uppercase tracking-wider py-1 px-3 rounded-full border border-brand-primary/20">
- ✨ Pinterest Customizer Available
+ âœ¨ Pinterest Customizer Available
  </span>
  </div>
  )}
@@ -943,11 +943,11 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
  <div>
  {prod.salePrice ? (
  <div className="space-x-2">
- <span className="text-white font-serif text-base font-bold">₦{prod.salePrice.toLocaleString()}</span>
- <span className="text-stone-500 font-serif text-xs line-through">₦{prod.price.toLocaleString()}</span>
+ <span className="text-white font-serif text-base font-bold">â‚¦{prod.salePrice.toLocaleString()}</span>
+ <span className="text-stone-500 font-serif text-xs line-through">â‚¦{prod.price.toLocaleString()}</span>
  </div>
  ) : (
- <span className="text-white font-serif text-base font-bold">₦{prod.price.toLocaleString()}</span>
+ <span className="text-white font-serif text-base font-bold">â‚¦{prod.price.toLocaleString()}</span>
  )}
  </div>
  <span className="text-[10px] font-semibold text-stone-500 uppercase tracking-widest">
@@ -995,13 +995,13 @@ GRID TEMPLATE 1: SHOP OR COLLECTIONS CATEGORIES
  </div>
  </section>
  )}
- {/* ────────────────────────────────────────────────────────
+ {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 GRID TEMPLATE 2: DYNAMIC GALLERY OPTIONS
-──────────────────────────────────────────────────────── */}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
  {group === 'gallery' && (
  <section className="max-w-7xl mx-auto space-y-16">
  <div className="text-center space-y-3 max-w-xl mx-auto">
- <span className="text-[10px] tracking-wider text-brand-primary uppercase font-bold block">✦ HIGH-ACCURACY VISUAL ARCHIVE ✦</span>
+ <span className="text-[10px] tracking-wider text-brand-primary uppercase font-bold block">âœ¦ HIGH-ACCURACY VISUAL ARCHIVE âœ¦</span>
  <h2 className="font-serif text-3xl font-black text-white">{normalizedTopic} Slides</h2>
  <p className="text-stone-400 font-sans text-xs sm:text-sm font-light leading-normal">
  A historical display of real custom placements, client living room aesthetics, and satisfying drying processes.
@@ -1046,7 +1046,7 @@ GRID TEMPLATE 2: DYNAMIC GALLERY OPTIONS
  style={{ left: `${sliderVal}%` }}
  >
  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-primary text-stone-950 font-bold flex items-center justify-center text-xs shadow-2xl">
- ↔
+ â†”
  </div>
  </div>
  </div>
@@ -1083,12 +1083,12 @@ GRID TEMPLATE 2: DYNAMIC GALLERY OPTIONS
  id={`gallery-masonry-${idx}`}
  key={idx}
  onClick={() => setActiveImageIdx(idx)}
- className="group rounded-2xl overflow-hidden border border-white/5 bg-[#111114]/40 cursor-pointer relative aspect-square shadow-md hover:border-brand-primary transition-all duration-300"
+ className="group rounded-2xl overflow-hidden border border-white/5 bg-[#111114]/40 cursor-pointer relative aspect-square shadow-md hover:border-brand-primary transition-colors"
  >
  <img
  src={item.img}
  alt={item.title}
- className="w-full h-full object-cover transition-transform duration-500"
+ className="w-full h-full object-cover"
  />
  <div className="absolute inset-0 bg-linear-to-t from-brand-secondary/90 via-brand-secondary/20 to-transparent flex flex-col justify-end p-5 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
  <span className="text-[9px] tracking-widest text-brand-primary uppercase font-bold block">{item.cat} ({item.size})</span>
@@ -1117,13 +1117,13 @@ GRID TEMPLATE 2: DYNAMIC GALLERY OPTIONS
  )}
  </section>
  )}
- {/* ────────────────────────────────────────────────────────
+ {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 GRID TEMPLATE 3: CUSTOM BRIEFS & COMMISSION REQUESTS
-──────────────────────────────────────────────────────── */}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
  {group === 'custom' && (
  <section className="max-w-4xl mx-auto bg-[#111114]/80 rounded-3xl border border-white/5 p-6 sm:p-12 text-left space-y-10">
  <div className="space-y-2 border-b border-white/5 pb-6">
- <span className="text-[10px] tracking-[0.25em] text-brand-primary font-bold block uppercase">✧ CO-CREATOR SPECIFICATIONS ✧</span>
+ <span className="text-[10px] tracking-[0.25em] text-brand-primary font-bold block uppercase">âœ§ CO-CREATOR SPECIFICATIONS âœ§</span>
  <h2 className="font-serif text-3xl font-bold text-white">Create dynamic brief for {normalizedTopic}</h2>
  <p className="text-stone-400 font-sans text-xs leading-normal font-light">
  Submit your preferred details below. Our builder formats a structural text document and launches directly to WhatsApp for artisan review.
@@ -1196,16 +1196,16 @@ GRID TEMPLATE 3: CUSTOM BRIEFS & COMMISSION REQUESTS
  <span>Send Brief via WhatsApp</span>
  </button>
  {formSuccess && (
- <p className="text-center text-xs text-emerald-400 font-bold animate-pulse">
+ <p className="text-center text-xs text-emerald-400 font-bold">
  Dynamic brief compiles successfully! Redirecting and opening WhatsApp...
  </p>
  )}
  </form>
  </section>
  )}
- {/* ────────────────────────────────────────────────────────
+ {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 GRID TEMPLATE 4: CHOSEN BLOG CATEGORY SHOWCASE
-──────────────────────────────────────────────────────── */}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
  {group === 'blog' && (
  <section className="max-w-7xl mx-auto space-y-12 text-left">
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1241,7 +1241,7 @@ GRID TEMPLATE 4: CHOSEN BLOG CATEGORY SHOWCASE
  className="rounded-2xl overflow-hidden bg-[#111114]/50 border border-white/5 flex flex-col justify-between hover:border-brand-primary transition-all duration-300 group"
  >
  <div className="aspect-16/10 overflow-hidden bg-stone-900 pointer-events-none">
- <img src={art.img} alt={art.title} className="w-full h-full object-cover transition-transform duration-500" />
+ <img src={art.img} alt={art.title} className="w-full h-full object-cover" />
  </div>
  <div className="p-6 space-y-4">
  <div className="flex items-center gap-2 text-[10px] text-brand-primary uppercase tracking-wider font-bold">
@@ -1263,9 +1263,9 @@ GRID TEMPLATE 4: CHOSEN BLOG CATEGORY SHOWCASE
  </div>
  </section>
  )}
- {/* ────────────────────────────────────────────────────────
+ {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 GRID TEMPLATE 5: CUSTOM ABOUT MODULES
-──────────────────────────────────────────────────────── */}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
  {group === 'about' && (
  <section className="max-w-4xl mx-auto text-left space-y-12 font-sans">
  {/* TEAM PROFILE VIEW */}
@@ -1332,7 +1332,7 @@ GRID TEMPLATE 5: CUSTOM ABOUT MODULES
  </div>
  <p className="text-stone-300 text-xs italic font-light">"{rev.review}"</p>
  <div className="text-[10px] text-stone-500 font-sans tracking-wide">
- <strong className="text-white font-medium">{rev.name}</strong> — {rev.location}
+ <strong className="text-white font-medium">{rev.name}</strong> â€” {rev.location}
  </div>
  </div>
  ))}
@@ -1341,22 +1341,22 @@ GRID TEMPLATE 5: CUSTOM ABOUT MODULES
  /* GENERAL EDITORIAL STORY BLOCKS */
  <div className="space-y-6 text-stone-300 font-light leading-relaxed text-xs sm:text-sm">
  <p>
- Spyce Crafts operates as Nigeria’s elite boutique resin and custom frame atelier. Founded with the conviction that domestic physical craftsmanship holds greater value than generic mass-produced catalog decor.
+ Spyce Crafts operates as Nigeriaâ€™s elite boutique resin and custom frame atelier. Founded with the conviction that domestic physical craftsmanship holds greater value than generic mass-produced catalog decor.
  </p>
  <p>
  Our processes are calculated to the millisecond. By taking slow curing layering parameters, using top-tier scratch-resistant glass resin blends, and offering completely custom digital matting layouts, each piece acts as an eternal landmark.
  </p>
  <div className="p-6 bg-[#111114] rounded-2xl border border-white/5 text-center mt-3">
  <span className="font-serif text-brand-primary tracking-widest text-xs uppercase font-extrabold block mb-2">Our physical motto</span>
- <span className="text-white italic text-base">“We clear bubbles, protect fresh wedding blooms, and outline dynamic memories to stand crystalline forever.”</span>
+ <span className="text-white italic text-base">â€œWe clear bubbles, protect fresh wedding blooms, and outline dynamic memories to stand crystalline forever.â€</span>
  </div>
  </div>
  )}
  </section>
  )}
- {/* ────────────────────────────────────────────────────────
+ {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 GRID TEMPLATE 6: REAL SPECIAL CHANNELS & PHONE ROSTERS
-──────────────────────────────────────────────────────── */}
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
  {group === 'contact' && (
  <section className="max-w-4xl mx-auto text-left gap-8 grid grid-cols-1 md:grid-cols-12">
  <div className="md:col-span-5 space-y-6">
@@ -1381,7 +1381,7 @@ GRID TEMPLATE 6: REAL SPECIAL CHANNELS & PHONE ROSTERS
  </div>
  </div>
  <div className="p-4 bg-[#111114] border border-white/5 rounded-2xl flex items-center gap-3">
- <MapPin className="w-5 h-5 text-brand-accent animate-pulse" />
+ <MapPin className="w-5 h-5 text-brand-accent" />
  <div>
  <strong className="block text-white">Atelier pick-up spots</strong>
  <span className="text-stone-400">Lagos Main Hub (pickup drops). Enugu Workshop branch.</span>
@@ -1436,8 +1436,8 @@ GRID TEMPLATE 6: REAL SPECIAL CHANNELS & PHONE ROSTERS
  Send via WhatsApp
  </button>
  {formSuccess && (
- <p className="text-center text-[10px] text-emerald-400 font-sans animate-pulse">
- WhatsApp is opening — tap <strong>Send</strong> in the chat to submit your message.
+ <p className="text-center text-[10px] text-emerald-400 font-sans">
+ WhatsApp is opening â€” tap <strong>Send</strong> in the chat to submit your message.
  </p>
  )}
  </form>
