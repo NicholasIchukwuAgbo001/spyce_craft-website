@@ -37,7 +37,7 @@ export default function CartDrawer() {
  <div className="p-6 border-b border-stone-100 flex items-center justify-between">
  <div className="flex items-center gap-2">
  <ShoppingBag className="w-5 h-5 text-brand-primary" />
- <h2 className="font-serif text-lg font-bold text-brand-dark">Your Custom Cart</h2>
+ <h2 className="font-serif text-lg font-bold text-white">Your Custom Cart</h2>
  <span className="w-5.5 h-5.5 rounded-full bg-brand-primary text-white text-[10px] font-bold flex items-center justify-center">
  {items.reduce((acc, item) => acc + item.quantity, 0)}
  </span>

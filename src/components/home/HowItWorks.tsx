@@ -48,7 +48,7 @@ export default function HowItWorks() {
  {/* Section Header */}
  <div id="how-it-works-header" className="text-center space-y-3 mb-16">
  <span className="text-[10px] tracking-widest uppercase font-sans font-semibold text-brand-primary">Stress-Free Ordering</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  Our Handcrafting &amp; Shipping Pipeline
  </h2>
  <p className="text-stone-500 font-sans max-w-xl mx-auto text-sm">
@@ -80,7 +80,7 @@ export default function HowItWorks() {
 
  {/* Details text */}
  <div className="space-y-1">
- <h3 className="font-serif text-base font-bold text-brand-dark">
+ <h3 className="font-serif text-base font-bold text-white">
  {step.title}
  </h3>
  <p className="text-xs text-stone-300 leading-relaxed font-sans max-w-xs mx-auto sm:mx-0 lg:mx-auto">

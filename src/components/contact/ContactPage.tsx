@@ -85,7 +85,7 @@ export default function ContactPage() {
  <div className="flex items-start gap-3.5">
  <MapPin className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
- <strong className="block text-brand-dark mb-0.5">Physical Atelier Locations</strong>
+ <strong className="block text-white mb-0.5">Physical Atelier Locations</strong>
  <span className="text-stone-600 leading-relaxed block">
  • Lagos Headquarters: 12B, Admiralty Hub Way, Lekki Phase 1, Lagos State, Nigeria.
  </span>
@@ -98,7 +98,7 @@ export default function ContactPage() {
  <div className="flex items-start gap-3.5">
  <Phone className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
- <strong className="block text-brand-dark mb-0.5">WhatsApp Designer Chat</strong>
+ <strong className="block text-white mb-0.5">WhatsApp Designer Chat</strong>
  <span className="text-stone-600 block">
  09069996290 (International: +234 906 999 6290)
  </span>
@@ -108,7 +108,7 @@ export default function ContactPage() {
  <div className="flex items-start gap-3.5">
  <Mail className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
- <strong className="block text-brand-dark mb-0.5">Electronic Inquiries</strong>
+ <strong className="block text-white mb-0.5">Electronic Inquiries</strong>
  <span className="text-stone-600 block">contact@spycecrafts.com</span>
  <span className="text-brand-primary block font-light text-[11px] mt-0.5">Support Ticket Queue: average 6-hour reply</span>
  </div>
@@ -117,7 +117,7 @@ export default function ContactPage() {
  <div className="flex items-start gap-3.5">
  <Clock className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
- <strong className="block text-brand-dark mb-0.5">Atelier Crafting Hours</strong>
+ <strong className="block text-white mb-0.5">Atelier Crafting Hours</strong>
  <span className="text-stone-600 block">Monday to Friday: 9:00 AM – 6:00 PM (WAT)</span>
  <span className="text-stone-500 block font-light">Saturday Curing Shifts: 10:00 AM – 3:00 PM (No phone pickups)</span>
  </div>
@@ -130,7 +130,7 @@ export default function ContactPage() {
  <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-brand-primary shadow-sm">
  <Compass className="w-4.5 h-4.5 animate-spin" />
  </div>
- <h4 className="font-serif text-sm font-bold text-brand-dark">Safe Transit Packing Guarantee</h4>
+ <h4 className="font-serif text-sm font-bold text-white">Safe Transit Packing Guarantee</h4>
  <p className="text-stone-500 leading-relaxed font-light text-[11px]">
  All dispatch orders from our Lekki and Enugu lines are double-layered in foam wrap and luxury box packaging to survive nationwide Nigeria transit flawlessly. If anything arrives chipped, we handcraft a replica to replace it immediately.
  </p>
@@ -142,7 +142,7 @@ export default function ContactPage() {
  <div className="lg:col-span-7 bg-brand-muted p-8 sm:p-12 rounded-3xl border border-brand-secondary/40 space-y-6">
  <div className="space-y-1">
  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Draft Your Inquiry Template</span>
- <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-dark">Atelier Design Brief</h3>
+ <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Atelier Design Brief</h3>
  <p className="text-xs text-stone-500">Provide your custom art choices so our lead creator can compile a pro-forma quote.</p>
  </div>
 

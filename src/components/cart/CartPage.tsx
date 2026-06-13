@@ -172,7 +172,7 @@ export default function CartPage() {
  {/* Price Display */}
  <div className="text-right">
  <span className="block font-mono text-xs text-stone-400">Total Price</span>
- <span className="font-mono text-sm font-bold text-brand-dark">
+ <span className="font-mono text-sm font-bold text-white">
  {formatNaira(currentPrice * item.quantity)}
  </span>
  </div>
@@ -196,7 +196,7 @@ export default function CartPage() {
  {/* Right Summary Column */}
  <div className="lg:col-span-4">
  <div className="bg-brand-muted p-6 sm:p-8 rounded-3xl border border-brand-secondary/40 space-y-6 lg:sticky lg:top-24">
- <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-dark border-b border-brand-secondary/60 pb-3">
+ <h3 className="font-serif text-lg sm:text-xl font-bold text-white border-b border-brand-secondary/60 pb-3">
  Summary Invoice
  </h3>
 
@@ -229,8 +229,8 @@ export default function CartPage() {
 
  {/* Price Breakdowns */}
  <div className="space-y-3 font-sans text-xs border-t border-brand-secondary/60 pt-4">
- <div className="flex justify-between text-stone-700"><span>Atelier Subtotal</span>
- <span className="font-mono text-stone-700">{formatNaira(subtotal)}</span>
+ <div className="flex justify-between text-stone-300"><span>Atelier Subtotal</span>
+ <span className="font-mono text-stone-200">{formatNaira(subtotal)}</span>
  </div>
  {discountAmount > 0 && (
  <div className="flex justify-between text-emerald-600 font-medium">
@@ -238,10 +238,10 @@ export default function CartPage() {
  <span className="font-mono">-{formatNaira(discountAmount)}</span>
  </div>
  )}
- <div className="flex justify-between text-stone-700"><span>Nationwide Shipping</span>
- <span className="font-mono text-stone-700">{delivery === 0 ? 'FREE' : formatNaira(delivery)}</span>
+ <div className="flex justify-between text-stone-300"><span>Nationwide Shipping</span>
+ <span className="font-mono text-stone-200">{delivery === 0 ? 'FREE' : formatNaira(delivery)}</span>
  </div>
- <div className="flex justify-between text-base font-bold text-brand-dark border-t border-brand-secondary/40 pt-3">
+ <div className="flex justify-between text-base font-bold text-white border-t border-brand-secondary/40 pt-3">
  <span className="font-serif">Invoice Estimate</span>
  <span className="font-mono text-brand-primary">{formatNaira(total)}</span>
  </div>
@@ -252,13 +252,13 @@ export default function CartPage() {
  <button
  id="cart-page-checkout-btn"
  onClick={() => navigateTo('checkout')}
- className="w-full py-3.5 bg-brand-dark hover:bg-brand-primary text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-md"
+ className="w-full py-3.5 bg-brand-primary hover:bg-brand-accent text-stone-950 text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-md"
  >
  <span>Secure Checkout Order</span>
- <ArrowRight className="w-4 h-4 text-brand-secondary" />
+ <ArrowRight className="w-4 h-4 text-white" />
  </button>
 
- <div className="flex items-center justify-center gap-1.5 text-[10px] text-stone-400 font-sans text-center">
+ <div className="flex items-center justify-center gap-1.5 text-[10px] text-stone-300 font-sans text-center">
  <ShieldCheck className="w-4 h-4 text-stone-400" />
  <span>WhatsApp Order Integration Active</span>
  </div>
@@ -274,7 +274,7 @@ export default function CartPage() {
  <ShoppingBag className="w-8 h-8" />
  </div>
  <div className="space-y-2">
- <h2 className="font-serif text-xl sm:text-2xl font-bold text-brand-dark">Your Cart is Empty</h2>
+ <h2 className="font-serif text-xl sm:text-2xl font-bold text-white">Your Cart is Empty</h2>
  <p className="text-xs sm:text-sm text-stone-500 max-w-xs mx-auto text-center leading-normal font-sans">
  Browse our collections of beautiful quote frames, custom-sketched stencils or hand-poured resins.
  </p>

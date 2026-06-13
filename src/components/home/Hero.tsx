@@ -166,19 +166,19 @@ export default function Hero() {
  {/* Brand Story Highlights Ribbon card set */}
  <div id="brand-highlights-bar" className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16 mt-8 border-t border-brand-secondary">
  <div className="text-center md:text-left space-y-1">
- <h3 className="font-serif text-lg font-bold text-brand-dark">100% Handcrafted</h3>
+ <h3 className="font-serif text-lg font-bold text-white">100% Handcrafted</h3>
  <p className="text-xs text-stone-300 font-sans">Never mass-produced; customized with care &amp; time</p>
  </div>
  <div className="text-center md:text-left space-y-1">
- <h3 className="font-serif text-lg font-bold text-brand-dark">Museum Grade Material</h3>
+ <h3 className="font-serif text-lg font-bold text-white">Museum Grade Material</h3>
  <p className="text-xs text-stone-300 font-sans">Bubble-free resin coatings &amp; high-impact glass</p>
  </div>
  <div className="text-center md:text-left space-y-1">
- <h3 className="font-serif text-lg font-bold text-brand-dark">Bespoke Customization</h3>
+ <h3 className="font-serif text-lg font-bold text-white">Bespoke Customization</h3>
  <p className="text-xs text-stone-300 font-sans">You sketch, draft quotes, select frame colors</p>
  </div>
  <div className="text-center md:text-left space-y-1">
- <h3 className="font-serif text-lg font-bold text-brand-dark">Safe Nationwide Delivery</h3>
+ <h3 className="font-serif text-lg font-bold text-white">Safe Nationwide Delivery</h3>
  <p className="text-xs text-stone-300 font-sans">Double-packaged padding prevents cracks</p>
  </div>
  </div>

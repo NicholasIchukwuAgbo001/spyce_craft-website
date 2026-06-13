@@ -220,7 +220,7 @@ export default function ShopPage() {
  <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-brand-dark">
  Our Handcrafted <span className="text-brand-primary font-normal italic">Collections</span>
  </h1>
- <p className="font-sans text-stone-500 max-w-xl mx-auto text-xs sm:text-sm">
+ <p className="font-sans text-stone-300 max-w-xl mx-auto text-xs sm:text-sm">
  Explore 100+ Pinterest-inspired quote blocks, bespoke family silhouettes, and anti-yellowing high-gloss coasters made with slow-run excellence.
  </p>
  </div>
@@ -526,7 +526,7 @@ export default function ShopPage() {
  <div className="flex items-baseline justify-between">
  {product.salePrice ? (
  <div className="flex items-baseline gap-1">
- <span className="font-mono text-xs sm:text-sm font-bold text-brand-dark">
+ <span className="font-mono text-xs sm:text-sm font-bold text-white">
  {formatNaira(product.salePrice)}
  </span>
  <span className="font-mono text-[10px] text-stone-300 line-through">
@@ -695,7 +695,7 @@ export default function ShopPage() {
  onClick={handleQuickAddSubmit}
  className="w-full py-3 bg-brand-dark hover:bg-brand-primary text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-colors shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
  >
- <ShoppingBag className="w-4 h-4 text-brand-secondary" />
+ <ShoppingBag className="w-4 h-4 text-white" />
  <span>Confirm and Add to Cart</span>
  </button>
  </div>

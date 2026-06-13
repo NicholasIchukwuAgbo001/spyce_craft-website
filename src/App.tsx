@@ -177,10 +177,10 @@ export default function App() {
 
  <div className="text-center space-y-3 mb-16">
  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Artisan Catalogue</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  Explore Curated Categories
  </h2>
- <p className="text-stone-600 font-sans max-w-xl mx-auto text-xs sm:text-sm">
+ <p className="text-stone-300 font-sans max-w-xl mx-auto text-xs sm:text-sm">
  Select your preferred handcrafted aesthetic. Clicking any card redirects you directly to the filtered catalog.
  </p>
  </div>
@@ -235,10 +235,10 @@ export default function App() {
 
  <div className="text-center space-y-3 mb-16">
  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Real Love Story</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  Loved by Discerning Collectors
  </h2>
- <p className="text-stone-600 font-sans max-w-xl mx-auto text-xs sm:text-sm">
+ <p className="text-stone-300 font-sans max-w-xl mx-auto text-xs sm:text-sm">
  Read beautiful reviews of actual client shipments and custom invoice completions.
  </p>
  </div>
@@ -259,7 +259,7 @@ export default function App() {
  "{test.review}"
  </p>
  <div className="pt-4 border-t border-brand-secondary/20 flex justify-between items-center text-xs">
- <span className="font-bold text-brand-dark font-sans">{test.name}</span>
+ <span className="font-bold text-white font-sans">{test.name}</span>
  <span className="text-stone-400 font-sans">{test.loc}</span>
  </div>
  </div>
@@ -274,10 +274,10 @@ export default function App() {
 
  <div className="text-center space-y-3 mb-12">
  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Viral Feed Presence</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  As Seen on TikTok &amp; Instagram
  </h2>
- <p className="text-stone-600 font-sans max-w-xl mx-auto text-xs sm:text-sm">
+ <p className="text-stone-300 font-sans max-w-xl mx-auto text-xs sm:text-sm">
  Our workspace processes, packaging stack lines, and frame design files regular clear massive organic followings.
  </p>
  </div>
@@ -339,7 +339,7 @@ export default function App() {
 
  <div className="text-center space-y-3 mb-16">
  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Help Hub</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  Design Questions? We Answered.
  </h2>
  </div>
@@ -358,7 +358,7 @@ export default function App() {
  id={`faq-toggle-btn-${idx}`}
  type="button"
  onClick={() => toggleFaq(idx)}
- className="w-full text-left px-6 py-5 flex items-center justify-between font-serif text-base font-bold text-brand-dark select-none"
+ className="w-full text-left px-6 py-5 flex items-center justify-between font-serif text-base font-bold text-white select-none"
  >
  <span>{faq.q}</span>
  {isOpen ? <ChevronUp className="w-4.5 h-4.5 text-brand-primary shrink-0" /> : <ChevronDown className="w-4.5 h-4.5 text-stone-400 shrink-0" />}
@@ -386,7 +386,7 @@ export default function App() {
  <div className="lg:col-span-5 space-y-8">
  <div className="space-y-3 text-center lg:text-left">
  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Direct Contact Lines</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  Visit or Chat With Us
  </h2>
  <p className="text-stone-500 font-sans text-xs sm:text-sm leading-relaxed">
@@ -398,7 +398,7 @@ export default function App() {
  <div className="flex items-start gap-3">
  <MapPin className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
- <strong className="block text-brand-dark mb-0.5">Headquarters &amp; Atelier Block</strong>
+ <strong className="block text-white mb-0.5">Headquarters &amp; Atelier Block</strong>
  <span className="text-stone-600 leading-relaxed block">Lagos Main Hub (Nationwide Delivery Line Available). Enugu workshop branch. Nigeria</span>
  </div>
  </div>
@@ -406,7 +406,7 @@ export default function App() {
  <div className="flex items-start gap-3">
  <Phone className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
- <strong className="block text-brand-dark mb-0.5">WhatsApp hotline</strong>
+ <strong className="block text-white mb-0.5">WhatsApp hotline</strong>
  <span className="text-stone-600 block">09069996290 (International: +234 906 999 6290)</span>
  </div>
  </div>
@@ -414,7 +414,7 @@ export default function App() {
  <div className="flex items-start gap-3">
  <Mail className="w-5 h-5 text-brand-primary shrink-0" />
  <div>
- <strong className="block text-brand-dark mb-0.5">Electronic Mail</strong>
+ <strong className="block text-white mb-0.5">Electronic Mail</strong>
  <span className="text-stone-600 block">contact@spycecrafts.com</span>
  </div>
  </div>
@@ -434,7 +434,7 @@ export default function App() {
  {/* Right Side: Interactive Quick Message Email Web Form */}
  <div className="lg:col-span-7 bg-brand-muted p-8 sm:p-12 rounded-3xl border border-brand-secondary/40 space-y-6">
  <div className="space-y-1">
- <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-dark">Send a Message</h3>
+ <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Send a Message</h3>
  <p className="text-xs text-stone-300 font-sans">Our average electronic correspondence response time is under 12 hours.</p>
  </div>
 

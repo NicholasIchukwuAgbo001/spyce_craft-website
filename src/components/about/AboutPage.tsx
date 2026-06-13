@@ -112,7 +112,7 @@ export default function AboutPage() {
  <div className="w-10 h-10 rounded-xl bg-brand-secondary/50 flex items-center justify-center text-brand-primary">
  <Compass className="w-5 h-5" />
  </div>
- <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-dark">Our Studio Mission</h3>
+ <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Our Studio Mission</h3>
  <p className="text-stone-500 text-xs sm:text-sm leading-relaxed font-light">
  To elevate Nigerian handcrafted manufacturing by blending modern Scandinavian minimalism with functional organic elements. We reject mass production in favor of meticulous, slow-poured microbatches that can last families a lifetime.
  </p>
@@ -123,7 +123,7 @@ export default function AboutPage() {
  <div className="w-10 h-10 rounded-xl bg-brand-secondary/50 flex items-center justify-center text-brand-primary">
  <Feather className="w-5 h-5" />
  </div>
- <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-dark">Our Design Vision</h3>
+ <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Our Design Vision</h3>
  <p className="text-stone-500 text-xs sm:text-sm leading-relaxed font-light">
  To build an interactive, digital co-design ecosystem where anyone can bring Pinterest ideas to life. We strive to be the international symbol of African creative craftsmanship—preserving real memories, one floral block at a time.
  </p>
@@ -137,7 +137,7 @@ export default function AboutPage() {
  <section id="craft-process-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-16">
  <div className="text-center space-y-3">
  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Rigorous Standards</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  Inside the Spyce Crafts Atelier
  </h2>
  <p className="text-stone-600 max-w-xl mx-auto text-xs sm:text-sm">
@@ -156,7 +156,7 @@ export default function AboutPage() {
  <span className="font-mono text-4xl font-bold text-brand-primary/20 leading-none block">
  {step.num}
  </span>
- <h4 className="font-serif text-base font-bold text-brand-dark">
+ <h4 className="font-serif text-base font-bold text-white">
  {step.title}
  </h4>
  <p className="text-xs text-stone-600 font-sans leading-relaxed">
@@ -177,7 +177,7 @@ export default function AboutPage() {
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
  <div className="text-center space-y-3">
  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">The Human Hands</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  Meet Our Artisan Collective
  </h2>
  <p className="text-stone-600 max-w-xl mx-auto text-xs sm:text-sm">
@@ -199,7 +199,7 @@ export default function AboutPage() {
  </div>
  </div>
  <div className="p-6 space-y-2">
- <h4 className="font-serif text-lg font-bold text-brand-dark">{member.name}</h4>
+ <h4 className="font-serif text-lg font-bold text-white">{member.name}</h4>
  <span className="text-[10px] tracking-wider uppercase text-brand-primary font-sans font-bold block">{member.role}</span>
  <p className="text-xs text-stone-500 font-sans leading-normal pt-2 border-t border-stone-50">
  {member.bio}

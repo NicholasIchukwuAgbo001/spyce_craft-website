@@ -164,7 +164,7 @@ export default function ProductDetailPage() {
  <Star key={s} className="w-4 h-4 fill-amber-500 text-amber-500" />
  ))}
  </div>
- <span className="font-bold text-brand-dark">{product.rating}</span>
+ <span className="font-bold text-white">{product.rating}</span>
  <span>({product.reviewCount} client reviews)</span>
  </div>
  </div>
@@ -174,7 +174,7 @@ export default function ProductDetailPage() {
  {product.salePrice ? (
  <div className="space-y-1">
  <div className="flex items-baseline gap-2">
- <span className="font-mono text-2xl font-bold text-brand-dark">
+ <span className="font-mono text-2xl font-bold text-white">
  {formatNaira(product.salePrice)}
  </span>
  <span className="font-mono text-sm text-stone-400 line-through">
@@ -361,7 +361,7 @@ export default function ProductDetailPage() {
  {/* Reviews Showcase section */}
  <div id="reviews-section" className="mt-16 pt-16 border-t border-stone-100">
  <div className="space-y-6 max-w-3xl">
- <h3 className="font-serif text-2xl font-bold text-brand-dark">
+ <h3 className="font-serif text-2xl font-bold text-white">
  Recent Client Reviews
  </h3>
 

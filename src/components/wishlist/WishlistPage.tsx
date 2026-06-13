@@ -46,7 +46,7 @@ export default function WishlistPage() {
  <div className="w-12 h-12 rounded-full bg-brand-secondary/40 flex items-center justify-center text-brand-primary mx-auto">
  <Heart className="w-6 h-6 fill-brand-primary" />
  </div>
- <h1 className="font-serif text-3xl sm:text-5xl font-bold text-brand-dark">
+ <h1 className="font-serif text-3xl sm:text-5xl font-bold text-white">
  My Artisan <span className="font-normal italic text-brand-primary">Wishlist</span>
  </h1>
  <p className="text-stone-500 max-w-lg mx-auto text-xs sm:text-sm leading-relaxed">
@@ -66,7 +66,7 @@ export default function WishlistPage() {
  onClick={handleMoveAllToCart}
  className="w-full sm:w-auto px-6 py-2.5 bg-brand-dark hover:bg-brand-primary text-white text-xs font-semibold uppercase tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
  >
- <ShoppingBag className="w-4 h-4 text-brand-secondary" />
+ <ShoppingBag className="w-4 h-4 text-white" />
  <span>Move All to Cart</span>
  </button>
  </div>
@@ -164,7 +164,7 @@ export default function WishlistPage() {
  <Heart className="w-8 h-8" />
  </div>
  <div className="space-y-2">
- <h2 className="font-serif text-xl sm:text-2xl font-bold text-brand-dark">Your Wishlist is Empty</h2>
+ <h2 className="font-serif text-xl sm:text-2xl font-bold text-white">Your Wishlist is Empty</h2>
  <p className="text-xs sm:text-sm text-stone-500 max-w-xs mx-auto">
  Explore our collections of quote frames, botanical wedding preserves and beautiful custom resins to add items.
  </p>

@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
  {/* Section Header */}
  <div id="usp-header" className="text-center space-y-3 mb-16">
  <span className="text-[10px] tracking-widest uppercase font-sans font-semibold text-brand-primary">The Spyce Standard</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  Why Discerning Clients Love Spyce Crafts
  </h2>
  <p className="text-stone-500 font-sans max-w-xl mx-auto text-sm">

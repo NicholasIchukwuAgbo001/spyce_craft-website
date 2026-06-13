@@ -137,7 +137,7 @@ export default function BlogView() {
  {/* Writer bio block & WhatsApp CTA */}
  <div className="p-6 sm:p-8 rounded-2xl bg-brand-secondary/20 border border-brand-primary/10 grid grid-cols-1 sm:grid-cols-4 gap-6 items-center">
  <div className="sm:col-span-3 space-y-2 text-center sm:text-left">
- <h4 className="font-serif text-lg font-bold text-brand-dark">Inspired by this read?</h4>
+ <h4 className="font-serif text-lg font-bold text-white">Inspired by this read?</h4>
  <p className="text-xs text-stone-300 font-sans leading-relaxed">
  Discuss wood finishes, gold-laced resin waves, or floral drying parameters directly with our lead specialist inside our active WhatsApp chat workshop!
  </p>

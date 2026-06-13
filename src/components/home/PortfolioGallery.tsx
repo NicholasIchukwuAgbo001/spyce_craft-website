@@ -101,7 +101,7 @@ export default function PortfolioGallery() {
  {/* Caption Header */}
  <div id="gallery-header" className="text-center space-y-3 mb-12">
  <span className="text-[10px] tracking-widest uppercase font-sans font-semibold text-brand-primary">Curated Workpiece Feed</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
  Our Pinterest-Style Creations
  </h2>
  <p className="text-stone-500 font-sans max-w-xl mx-auto text-sm">

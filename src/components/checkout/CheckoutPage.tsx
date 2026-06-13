@@ -264,7 +264,7 @@ export default function CheckoutPage() {
  {/* Right Form: Checkout Order Summary cards */}
  <div id="checkout-order-summary" className="lg:col-span-5 space-y-6">
  <div className="bg-stone-50 border border-stone-100 rounded-3xl p-6 space-y-6">
- <h3 className="font-serif text-lg font-bold text-brand-dark flex items-center gap-2 border-b border-stone-200 pb-3">
+ <h3 className="font-serif text-lg font-bold text-white flex items-center gap-2 border-b border-stone-200 pb-3">
  <ShoppingBag className="w-5 h-5 text-brand-primary" />
  Detailed Cart Review
  </h3>
@@ -289,11 +289,11 @@ export default function CheckoutPage() {
  <div className="border-t border-stone-200 pt-4 space-y-2 text-xs">
  <div className="flex justify-between text-stone-300">
  <span>Subtotal Sum</span>
- <span className="font-mono text-stone-700">{formatNaira(subtotal)}</span>
+ <span className="font-mono text-stone-200">{formatNaira(subtotal)}</span>
  </div>
  <div className="flex justify-between text-stone-300">
  <span>Regional Deliveries (Naira flat-rate)</span>
- <span className="font-mono text-stone-700">{deliveryFee === 0 ? 'FREE' : formatNaira(deliveryFee)}</span>
+ <span className="font-mono text-stone-200">{deliveryFee === 0 ? 'FREE' : formatNaira(deliveryFee)}</span>
  </div>
  <div className="border-t border-dashed border-stone-200 pt-3 flex justify-between text-sm font-bold text-stone-900">
  <span className="font-serif text-brand-dark">Grand Invoice Total</span>
