@@ -187,7 +187,7 @@ export default function ShopPage() {
     };
 
     return (
-        <main id="shop-catalog-page" className="py-12 bg-white min-h-screen">
+        <main id="shop-catalog-page" className="py-12 bg-stone-50 min-h-screen">
 
             {/* ── Cart Added Flash Toast ── */}
             <div
@@ -447,11 +447,12 @@ export default function ShopPage() {
                         {/* Products grid - Mobile 2 Column, Tablet 3 Column, Desktop 4 Column */}
                         {paginatedProducts.length > 0 ? (
                             <div id="catalog-products-grid" className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-                                {paginatedProducts.map((product) => {
+                                {paginatedProducts.map((product, productIndex) => {
                                     const actualPrice = product.salePrice ?? product.price;
                                     const isSaved = wishlist.some((w) => w.id === product.id);
                                     const badge = getBadgeType(product);
                                     const isHovered = hoveredCardId === product.id;
+                                    const isAboveFold = productIndex < 4;
 
                                     return (
                                         <div
@@ -460,18 +461,18 @@ export default function ShopPage() {
                                             onClick={() => navigateTo('product-detail', product.slug)}
                                             onMouseEnter={() => setHoveredCardId(product.id)}
                                             onMouseLeave={() => setHoveredCardId(null)}
-                                            className="group bg-white rounded-2xl border border-stone-100 overflow-hidden shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-between"
+                                            className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-between"
                                         >
                                             {/* Visual area � overflow-hidden prevents image bleed into adjacent GPU layers */}
-                                            <div className="relative aspect-square bg-stone-50 overflow-hidden">
+                                            <div className="relative aspect-square bg-stone-100 overflow-hidden">
                                                 {/* Primary image always rendered, secondary pre-loaded beneath via opacity swap � avoids src change GPU tear */}
                                                 <img
                                                     src={product.images[0]}
                                                     alt={product.name}
                                                     className={`absolute inset-0 w-full h-full object-cover ${isHovered && product.images[1] ? 'opacity-0' : 'opacity-100'}`}
                                                     referrerPolicy="no-referrer"
-                                                    loading="lazy"
-                                                    decoding="async"
+                                                    loading={isAboveFold ? 'eager' : 'lazy'}
+                                                    decoding={isAboveFold ? 'sync' : 'async'}
                                                 />
                                                 {product.images[1] && (
                                                     <img

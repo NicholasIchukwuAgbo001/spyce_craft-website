@@ -70,45 +70,9 @@ textarea::placeholder {
   [class*="transition-opacity"],
   [class*="hover:shadow"] {
     transition: none !important;
-    box-shadow: none !important;
   }
   .animate-pulse, .animate-spin, .animate-bounce,
   .animate-ping, .animate-fadeIn, .animate-slideIn {
     animation: none !important;
   }
-
-  /* ─── CRITICAL: Prevent GPU compositing layer explosion ──────────────────
-     overflow-hidden + border-radius on EACH card = one GPU layer per card.
-     With 12–24 cards in a grid this causes scan-line tearing on Android.
-     Solution: contain the grid as a SINGLE paint layer, disable per-card
-     layer promotion by removing the overflow-hidden + border-radius combo.
-  ──────────────────────────────────────────────────────────────────────── */
-  #catalog-products-grid {
-    /* Single paint layer for the whole grid */
-    contain: strict;
-    /* Force grid onto its own compositor layer once, not per-child */
-    transform: translateZ(0);
-    will-change: auto;
-  }
-
-  /* Cards: remove overflow-hidden (main layer promotion trigger).
-     Rounding is applied only to the image wrapper (no overflow-hidden on outer card) */
-  #catalog-products-grid > div {
-    overflow: visible !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-
-  /* Image wrapper keeps its own clipping but is NOT a separate compositor layer */
-  #catalog-products-grid > div .aspect-square {
-    border-radius: 0.75rem !important;
-  }
-
-  /* Disable the fixed+transform cart toast on mobile — it intersects scroll layers */
-  #catalog-products-grid ~ div[class*="fixed"] {
-    display: none !important;
-  }
-
-  /* Do NOT force overflow:hidden on every aspect container globally —
-     that was causing the layer explosion */
 }
