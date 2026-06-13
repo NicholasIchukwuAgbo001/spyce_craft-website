@@ -232,8 +232,8 @@ export default function ShopPage() {
                     {/* Left Side Filters Sidebar Column */}
                     <div id="shop-filters-sidebar" className="space-y-6 lg:col-span-1 bg-brand-muted p-5 sm:p-6 rounded-2xl border border-brand-secondary/40 lg:sticky lg:top-24 lg:max-h-[85vh] lg:overflow-y-auto">
 
-                        <div className="flex items-center justify-between border-b border-brand-secondary/60 pb-3">
-                            <span className="font-serif text-base font-bold text-brand-dark flex items-center gap-2">
+                        <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                            <span className="font-serif text-base font-bold text-white flex items-center gap-2">
                                 <SlidersHorizontal className="w-4 h-4 text-brand-primary" />
                                 Refine Art
                             </span>
@@ -261,7 +261,7 @@ export default function ShopPage() {
                                 )}
                                 {/* Mobile toggle — only visible on small screens */}
                                 <button
-                                    className="lg:hidden text-[10px] text-stone-400 font-sans uppercase tracking-wider px-2 py-1 border border-white/10 rounded"
+                                    className="lg:hidden text-[10px] text-stone-200 font-sans uppercase tracking-wider px-2 py-1 border border-white/30 rounded"
                                     onClick={() => setSidebarOpen(o => !o)}
                                 >
                                     {sidebarOpen ? 'Hide' : 'Show Filters'}
@@ -274,7 +274,7 @@ export default function ShopPage() {
 
                             {/* Keyword Search */}
                             <div className="space-y-1.5">
-                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Search Catalog</label>
+                                <label className="text-[10px] uppercase text-stone-300 font-sans tracking-wide block font-bold">Search Catalog</label>
                                 <div className="relative">
                                     <input
                                         id="keyword-search-input"
@@ -290,7 +290,7 @@ export default function ShopPage() {
 
                             {/* Category Filter */}
                             <div className="space-y-1.5">
-                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Medium Category</label>
+                                <label className="text-[10px] uppercase text-stone-300 font-sans tracking-wide block font-bold">Medium Category</label>
                                 <select
                                     id="filter-category-select"
                                     value={selectedCategory}
@@ -306,7 +306,7 @@ export default function ShopPage() {
                             {/* Price Filter range */}
                             <div className="space-y-2 pt-2 border-t border-brand-secondary/40">
                                 <div className="flex items-center justify-between">
-                                    <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Max Budget</label>
+                                    <label className="text-[10px] uppercase text-stone-300 font-sans tracking-wide block font-bold">Max Budget</label>
                                     <span className="text-xs font-bold font-mono text-brand-primary">{formatNaira(maxPrice)}</span>
                                 </div>
                                 <input
@@ -319,7 +319,7 @@ export default function ShopPage() {
                                     onChange={(e) => setMaxPrice(parseInt(e.target.value))}
                                     className="w-full accent-brand-primary cursor-pointer"
                                 />
-                                <div className="flex justify-between text-[10px] text-stone-400 font-mono">
+                                <div className="flex justify-between text-[10px] text-stone-300 font-mono">
                                     <span>NGN 10,000</span>
                                     <span>NGN 100,000</span>
                                 </div>
@@ -327,7 +327,7 @@ export default function ShopPage() {
 
                             {/* Color Filter */}
                             <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
-                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Frame/Resin Colors</label>
+                                <label className="text-[10px] uppercase text-stone-300 font-sans tracking-wide block font-bold">Frame/Resin Colors</label>
                                 <select
                                     id="filter-color-select"
                                     value={selectedColor}
@@ -340,7 +340,7 @@ export default function ShopPage() {
                             </div>
 
                             <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
-                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Atelier Core Material</label>
+                                <label className="text-[10px] uppercase text-stone-300 font-sans tracking-wide block font-bold">Atelier Core Material</label>
                                 <select
                                     id="filter-material-select"
                                     value={selectedMaterial}
@@ -354,7 +354,7 @@ export default function ShopPage() {
 
                             {/* Size Filter */}
                             <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
-                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Desired Dimensions</label>
+                                <label className="text-[10px] uppercase text-stone-300 font-sans tracking-wide block font-bold">Desired Dimensions</label>
                                 <select
                                     id="filter-size-select"
                                     value={selectedSize}
@@ -368,7 +368,7 @@ export default function ShopPage() {
 
                             {/* Minimum Rating */}
                             <div className="space-y-1.5 pt-2 border-t border-brand-secondary/40">
-                                <label className="text-[10px] uppercase text-stone-400 font-sans tracking-wide block font-bold">Minimum Rating</label>
+                                <label className="text-[10px] uppercase text-stone-300 font-sans tracking-wide block font-bold">Minimum Rating</label>
                                 <div className="flex items-center gap-1.5 font-sans">
                                     {[0, 4.0, 4.5, 4.8].map((score) => (
                                         <button
@@ -411,11 +411,11 @@ export default function ShopPage() {
 
                             {/* Quick Atelier Flyer */}
                             <div className="p-4 rounded-xl bg-brand-secondary/35 relative overflow-hidden text-stone-100">
-                                <h4 className="font-serif text-xs font-bold text-brand-dark mb-1 flex items-center gap-1">
+                                <h4 className="font-serif text-xs font-bold text-white mb-1 flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-brand-primary" />
                                     Want bespoke sizing?
                                 </h4>
-                                <p className="text-[10px] leading-relaxed text-stone-500 font-sans mb-3">
+                                <p className="text-[10px] leading-relaxed text-stone-300 font-sans mb-3">
                                     Send your measurements and custom notes straight to our slow-curing studio.
                                 </p>
                                 <button
@@ -434,8 +434,8 @@ export default function ShopPage() {
 
                         {/* Catalog Sorting Options Header */}
                         <div className="flex flex-col sm:flex-row items-center justify-between bg-stone-50 p-4 rounded-xl border border-stone-100 gap-4">
-                            <p className="text-xs text-stone-300 font-sans">
-                                Found <span className="font-bold text-brand-dark font-mono">{filteredProducts.length}</span> luxury pieces matching filters
+                            <p className="text-xs text-stone-500 font-sans">
+                                Found <span className="font-bold text-stone-800 font-mono">{filteredProducts.length}</span> luxury pieces matching filters
                             </p>
                             <div className="flex items-center gap-2.5 w-full sm:w-auto">
                                 <label className="text-xs text-stone-500 uppercase tracking-wider font-sans shrink-0 font-medium">Sort:</label>
@@ -521,24 +521,24 @@ export default function ShopPage() {
                                             {/* Info details */}
                                             <div className="p-4 sm:p-5 space-y-2.5 flex-1 flex flex-col justify-between font-sans">
                                                 <div className="space-y-1">
-                                                    <span className="text-[9px] tracking-wider uppercase text-stone-400 block font-bold">
+                                                    <span className="text-[9px] tracking-wider uppercase text-stone-500 block font-bold">
                                                         {product.category}
                                                     </span>
-                                                    <h3 className="font-serif text-sm font-bold text-brand-dark line-clamp-1 group-hover:text-brand-primary transition-colors">
+                                                    <h3 className="font-serif text-sm font-bold text-stone-900 line-clamp-1 group-hover:text-brand-primary transition-colors">
                                                         {product.name}
                                                     </h3>
                                                     {/* Stars display */}
                                                     <div className="flex items-center gap-1">
                                                         <div className="flex text-amber-400">
                                                             {[...Array(5)].map((_, i) => (
-                                                                <Star key={i} className={`w-3 h-3 ${i < Math.floor(product.rating) ? 'fill-current' : 'text-stone-200'}`} />
+                                                                <Star key={i} className={`w-3 h-3 ${i < Math.floor(product.rating) ? 'fill-current' : 'text-stone-300'}`} />
                                                             ))}
                                                         </div>
-                                                        <span className="text-[10px] text-stone-400 font-mono font-bold">({product.reviewCount})</span>
+                                                        <span className="text-[10px] text-stone-500 font-mono font-bold">({product.reviewCount})</span>
                                                     </div>
                                                 </div>
 
-                                                <div className="space-y-2 border-t border-stone-50 pt-2.5">
+                                                <div className="space-y-2 border-t border-stone-200 pt-2.5">
                                                     {/* Price Display */}
                                                     <div className="flex items-baseline justify-between">
                                                         {product.salePrice ? (
@@ -563,12 +563,12 @@ export default function ShopPage() {
                                                     </div>
 
                                                     {/* Quick Checkout links */}
-                                                    <div className="flex items-center justify-between gap-1 mt-1">
+                                                    <div className="flex flex-col gap-1.5 mt-1">
                                                         <button
                                                             id={`quick-whatsapp-${product.id}`}
                                                             type="button"
                                                             onClick={(e) => handleWhatsAppBuyNow(product, e)}
-                                                            className="px-2 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-[10px] font-bold flex items-center justify-center gap-1 transition-colors flex-1"
+                                                            className="w-full px-2 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-[10px] font-bold flex items-center justify-center gap-1 transition-colors"
                                                         >
                                                             <span>WhatsApp</span>
                                                         </button>
@@ -582,7 +582,7 @@ export default function ShopPage() {
                                                                 setCartToastProduct(product);
                                                                 setTimeout(() => setCartToastProduct(null), 3500);
                                                             }}
-                                                            className="px-2 py-1.5 rounded-lg bg-brand-primary hover:bg-brand-dark text-white text-[10px] font-bold flex-1 flex items-center justify-center gap-1"
+                                                            className="w-full px-2 py-1.5 rounded-lg bg-stone-900 hover:bg-stone-700 text-white text-[10px] font-bold flex items-center justify-center gap-1"
                                                         >
                                                             <ShoppingBag className="w-3 h-3" />
                                                             <span>Add to Cart</span>
