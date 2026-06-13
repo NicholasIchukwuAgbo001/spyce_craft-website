@@ -111,13 +111,12 @@ export const useCartStore = create<CartState>()(
       getDeliveryFee: () => {
         const subtotal = get().getCartSubtotal();
         if (subtotal === 0) return 0;
-        return subtotal > 100000 ? 0 : 3500; // Free shipping above NGN 100k
+        return subtotal > 100000 ? 0 : 3500; 
       },
       getCartTotal: () => {
         return get().getCartSubtotal() + get().getDeliveryFee();
       },
 
-      // Wishlist handling
       toggleWishlist: (product) => {
         set((state) => {
           const inWish = state.wishlist.some((item) => item.id === product.id);
