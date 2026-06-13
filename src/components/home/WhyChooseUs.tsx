@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Heart, Sparkles, Trophy, ShieldCheck, Truck, ThumbsUp } from 'lucide-react';
 
 export default function WhyChooseUs() {
@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
  {
  icon: <Sparkles className="w-6 h-6 text-brand-primary" />,
  title: 'Fully Customized',
- description: 'You dictate everything—the text characters, frame styles, dimensions, color palettes, and reference visuals.'
+ description: 'You dictate everything�the text characters, frame styles, dimensions, color palettes, and reference visuals.'
  },
  {
  icon: <Trophy className="w-6 h-6 text-brand-primary" />,
@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
  {/* Section Header */}
  <div id="usp-header" className="text-center space-y-3 mb-16">
  <span className="text-[10px] tracking-widest uppercase font-sans font-semibold text-brand-primary">The Spyce Standard</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
  Why Discerning Clients Love Spyce Crafts
  </h2>
  <p className="text-stone-500 font-sans max-w-xl mx-auto text-sm">
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
  <h3 className="font-serif text-lg font-bold text-brand-dark mt-6 mb-2">
  {card.title}
  </h3>
- <p className="text-sm text-stone-300 leading-relaxed font-sans">
+ <p className="text-sm text-stone-600 leading-relaxed font-sans">
  {card.description}
  </p>
  </div>

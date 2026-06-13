@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { Eye, ArrowRight, X, Heart, Sparkles, MessageSquare } from 'lucide-react';
 
@@ -20,7 +20,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
  },
  {
  id: 'g2',
- title: '“WORK HARD” Minimalist Satin Frame',
+ title: '�WORK HARD� Minimalist Satin Frame',
  category: 'Custom Frames',
  image: '/assets/150610.jpg',
  likes: 310
@@ -41,7 +41,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
  },
  {
  id: 'g5',
- title: '“TAKE RISKS” High-Contrast Typographical Canvas',
+ title: '�TAKE RISKS� High-Contrast Typographical Canvas',
  category: 'Custom Frames',
  image: '/assets/150613.jpg',
  likes: 198
@@ -101,7 +101,7 @@ export default function PortfolioGallery() {
  {/* Caption Header */}
  <div id="gallery-header" className="text-center space-y-3 mb-12">
  <span className="text-[10px] tracking-widest uppercase font-sans font-semibold text-brand-primary">Curated Workpiece Feed</span>
- <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
+ <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
  Our Pinterest-Style Creations
  </h2>
  <p className="text-stone-500 font-sans max-w-xl mx-auto text-sm">
@@ -173,7 +173,7 @@ export default function PortfolioGallery() {
  {item.title}
  </h3>
  <div className="flex items-center justify-between">
- <span className="text-xs text-stone-300 font-sans">{item.likes + (isLiked ? 1 : 0)} admirers</span>
+ <span className="text-xs text-stone-600 font-sans">{item.likes + (isLiked ? 1 : 0)} admirers</span>
  <span className="text-xs flex items-center gap-1 text-brand-primary font-semibold">
  Custom order this <ArrowRight className="w-3 h-3" />
  </span>
@@ -239,14 +239,14 @@ export default function PortfolioGallery() {
  <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-brand-dark">
  {lightboxItem.title}
  </h3>
- <p className="text-sm text-stone-300 leading-relaxed font-sans">
+ <p className="text-sm text-stone-600 leading-relaxed font-sans">
  This exquisite item represents true, slow-crafted artistry. Hand-built using organic crystals, highly detailed digital sketching, and high-gloss multi-layer UV protected polymers to assure a brilliant look for generations.
  </p>
 
  <div className="border-t border-stone-100 pt-4 space-y-2">
- <span className="block text-xs uppercase text-stone-400 font-sans tracking-widest">Pricing Estimate</span>
+ <span className="block text-xs uppercase text-stone-600 font-sans tracking-widest">Pricing Estimate</span>
  <p className="font-serif text-xl font-bold text-brand-primary">From NGN 18,500 - NGN 45,000</p>
- <span className="text-[11px] text-stone-400 font-sans italic">Definitive pricing is contingent on frame dimensions selected.</span>
+ <span className="text-[11px] text-stone-600 font-sans italic">Definitive pricing is contingent on frame dimensions selected.</span>
  </div>
  </div>
 

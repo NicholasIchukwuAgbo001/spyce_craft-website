@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { BLOGS } from '../../data/blogs';
 import { ArrowLeft, Clock, Calendar, User, Search, Sparkles, MessageSquare, Tag, Eye } from 'lucide-react';
@@ -137,8 +137,8 @@ export default function BlogView() {
  {/* Writer bio block & WhatsApp CTA */}
  <div className="p-6 sm:p-8 rounded-2xl bg-brand-secondary/20 border border-brand-primary/10 grid grid-cols-1 sm:grid-cols-4 gap-6 items-center">
  <div className="sm:col-span-3 space-y-2 text-center sm:text-left">
- <h4 className="font-serif text-lg font-bold text-white">Inspired by this read?</h4>
- <p className="text-xs text-stone-300 font-sans leading-relaxed">
+ <h4 className="font-serif text-lg font-bold text-stone-900">Inspired by this read?</h4>
+ <p className="text-xs text-stone-600 font-sans leading-relaxed">
  Discuss wood finishes, gold-laced resin waves, or floral drying parameters directly with our lead specialist inside our active WhatsApp chat workshop!
  </p>
  </div>
@@ -167,7 +167,7 @@ export default function BlogView() {
  <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-dark">
  Atelier Inspiration &amp; <span className="text-brand-primary font-normal italic">Styling Guide</span>
  </h1>
- <p className="font-sans text-stone-300 max-w-xl mx-auto text-sm">
+ <p className="font-sans text-stone-600 max-w-xl mx-auto text-sm">
  Secrets of epoxy resin lacing, wedding keepsake preservation, minimalist quote pairings, and aesthetic master bedroom layouts.
  </p>
  </div>
@@ -228,7 +228,7 @@ export default function BlogView() {
  <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
  <div className="space-y-2">
  {/* Meta information row */}
- <div className="flex items-center gap-4 text-[10px] text-stone-400 font-sans tracking-wide">
+ <div className="flex items-center gap-4 text-[10px] text-stone-600 font-sans tracking-wide">
  <span className="flex items-center gap-1">
  <Calendar className="w-3.5 h-3.5" />
  {post.date}
@@ -253,7 +253,7 @@ export default function BlogView() {
  <span className="text-[10px] tracking-wider uppercase text-brand-primary font-bold font-mono">
  Read Full Article
  </span>
- <div className="flex items-center gap-1 text-[10px] text-stone-400 font-sans">
+ <div className="flex items-center gap-1 text-[10px] text-stone-600 font-sans">
  <Eye className="w-3.5 h-3.5" />
  <span>400+ readers</span>
  </div>

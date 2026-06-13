@@ -80,7 +80,7 @@ export default function HowItWorks() {
 
  {/* Details text */}
  <div className="space-y-1">
- <h3 className="font-serif text-base font-bold text-white">
+ <h3 className="font-serif text-base font-bold text-stone-900">
  {step.title}
  </h3>
  <p className="text-xs text-stone-300 leading-relaxed font-sans max-w-xs mx-auto sm:mx-0 lg:mx-auto">

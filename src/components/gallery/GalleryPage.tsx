@@ -242,7 +242,7 @@ export default function GalleryPage() {
  <h3 className="font-serif text-sm font-bold text-white line-clamp-1 mt-0.5 mb-1.5">
  {item.title}
  </h3>
- <p className="text-[10px] text-stone-300 font-sans leading-normal line-clamp-2 font-light">
+ <p className="text-[10px] text-stone-600 font-sans leading-normal line-clamp-2 font-light">
  {item.description}
  </p>
 
@@ -361,15 +361,15 @@ export default function GalleryPage() {
  </div>
 
  <div className="space-y-2">
- <h2 className="font-serif text-xl sm:text-2xl font-bold text-white">
+ <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-900">
  {lightboxItem.title}
  </h2>
- <span className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] tracking-wide text-stone-300 font-sans">
+ <span className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] tracking-wide text-stone-600 font-sans">
  {lightboxItem.category}
  </span>
  </div>
 
- <p className="text-xs sm:text-sm text-stone-400 font-sans leading-relaxed">
+ <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
  {lightboxItem.description}
  </p>
 

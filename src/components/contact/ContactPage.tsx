@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useCartStore } from '../../store/useCartStore';
 import { Send, MapPin, Phone, Mail, Clock, MessageSquare, Instagram, Compass, CheckCircle } from 'lucide-react';
 import { WHATSAPP_PHONE_NUMBER, encodeWhatsAppMessage } from '../../lib/whatsapp';
@@ -130,7 +130,7 @@ export default function ContactPage() {
  <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-brand-primary shadow-sm">
  <Compass className="w-4.5 h-4.5 animate-spin" />
  </div>
- <h4 className="font-serif text-sm font-bold text-white">Safe Transit Packing Guarantee</h4>
+ <h4 className="font-serif text-sm font-bold text-stone-900">Safe Transit Packing Guarantee</h4>
  <p className="text-stone-500 leading-relaxed font-light text-[11px]">
  All dispatch orders from our Lekki and Enugu lines are double-layered in foam wrap and luxury box packaging to survive nationwide Nigeria transit flawlessly. If anything arrives chipped, we handcraft a replica to replace it immediately.
  </p>
@@ -142,7 +142,7 @@ export default function ContactPage() {
  <div className="lg:col-span-7 bg-brand-muted p-8 sm:p-12 rounded-3xl border border-brand-secondary/40 space-y-6">
  <div className="space-y-1">
  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-primary">Draft Your Inquiry Template</span>
- <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Atelier Design Brief</h3>
+ <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900">Atelier Design Brief</h3>
  <p className="text-xs text-stone-500">Provide your custom art choices so our lead creator can compile a pro-forma quote.</p>
  </div>
 
@@ -215,7 +215,7 @@ export default function ContactPage() {
  />
  </div>
 
- <div className="flex items-center gap-2 text-[10px] text-stone-400 font-sans pt-1">
+ <div className="flex items-center gap-2 text-[10px] text-stone-600 font-sans pt-1">
  <MessageSquare className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
  <span>Submitting will open <strong className="text-emerald-400">WhatsApp</strong> with your brief pre-filled — no account needed.</span>
  </div>
