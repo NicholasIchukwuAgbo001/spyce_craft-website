@@ -157,7 +157,7 @@ export default function App() {
     ];
 
     return (
-        <div className="min-h-screen bg-brand-secondary flex flex-col text-[#ECE9E4] font-sans selection:bg-brand-primary/20 selection:text-brand-primary">
+        <div className="min-h-screen bg-brand-secondary flex flex-col text-[#ECE9E4] font-sans selection:bg-brand-primary/20 selection:text-brand-primary" style={{ backgroundColor: ['shop', 'cart', 'checkout', 'wishlist'].includes(currentView) ? '#f8f9fa' : undefined }}>
 
             {/* Shared Navigation Header */}
             <Navbar />

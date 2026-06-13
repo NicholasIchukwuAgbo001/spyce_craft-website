@@ -446,7 +446,7 @@ export default function ShopPage() {
 
                         {/* Products grid - Mobile 2 Column, Tablet 3 Column, Desktop 4 Column */}
                         {paginatedProducts.length > 0 ? (
-                            <div id="catalog-products-grid" className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+                            <div id="catalog-products-grid" className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 bg-stone-50">
                                 {paginatedProducts.map((product, productIndex) => {
                                     const actualPrice = product.salePrice ?? product.price;
                                     const isSaved = wishlist.some((w) => w.id === product.id);

@@ -34,6 +34,17 @@ html, body {
 ::-webkit-scrollbar-track { background: #0A0A0C; }
 ::-webkit-scrollbar-thumb { background: #C5A880; border-radius: 2px; }
 
+/* ── Shop/Cart/Checkout pages — override dark body bg so card gaps match page ── */
+#shop-catalog-page,
+#cart-page-layout-container,
+#checkout-layout-page {
+  background-color: #f8f9fa;
+}
+
+#catalog-products-grid {
+  background-color: #f8f9fa;
+}
+
 /* ══════════════════════════════════════════
    INPUTS — dark text on white background
    ══════════════════════════════════════════ */
